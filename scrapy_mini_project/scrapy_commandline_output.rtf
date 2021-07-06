@@ -1,0 +1,1353 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red45\green150\blue30;\red47\green231\blue26;
+\red193\green101\blue28;\red161\green36\blue26;\red252\green33\blue24;\red46\green174\blue187;\red47\green180\blue29;
+\red180\green36\blue25;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c20459\c63760\c15349;\cssrgb\c17862\c90513\c12810;
+\cssrgb\c80553\c47366\c13835;\cssrgb\c69952\c21066\c13204;\cssrgb\c100000\c23177\c11601;\cssrgb\c20196\c73240\c78250;\cssrgb\c20238\c73898\c14947;
+\cssrgb\c76409\c21698\c12524;}
+\margl1440\margr1440\vieww26540\viewh12320\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 (base) austinf1@USSFO-80UMD6R springboard % scrapy startproject scrapy_mini_project\
+New Scrapy project 'scrapy_mini_project', using template directory '/Users/austinf1/miniconda3/lib/python3.8/site-packages/scrapy/templates/project', created in:\
+    /Users/austinf1/Documents/workspace/springboard/scrapy_mini_project\
+\
+You can start your first spider with:\
+    cd scrapy_mini_project\
+    scrapy genspider example example.com\
+(base) austinf1@USSFO-80UMD6R springboard % cd scrapy_mini_project \
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls -l\
+total 8\
+-rw-r--r--  1 austinf1  staff  281 Jul  6 15:31 scrapy.cfg\
+drwxr-xr-x  8 austinf1  staff  256 Jul  6 15:31 scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd scrapy_mini_project \
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+__init__.py	items.py	middlewares.py	pipelines.py	settings.py	spiders\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd spiders \
+(base) austinf1@USSFO-80UMD6R spiders % ls\
+__init__.py\
+(base) austinf1@USSFO-80UMD6R spiders % cd ..\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls -l\
+total 32\
+-rw-r--r--  1 austinf1  staff     0 Apr  4 21:04 __init__.py\
+-rw-r--r--  1 austinf1  staff   273 Jul  6 15:31 items.py\
+-rw-r--r--  1 austinf1  staff  3670 Jul  6 15:31 middlewares.py\
+-rw-r--r--  1 austinf1  staff   371 Jul  6 15:31 pipelines.py\
+-rw-r--r--  1 austinf1  staff  3194 Jul  6 15:31 settings.py\
+drwxr-xr-x  3 austinf1  staff    96 Apr  4 21:04 spiders\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project/scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd ..\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls -l\
+total 8\
+-rw-r--r--  1 austinf1  staff  281 Jul  6 15:31 scrapy.cfg\
+drwxr-xr-x  8 austinf1  staff  256 Jul  6 15:31 scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % mv scrapy_mini_project tutorial\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls -l\
+total 8\
+-rw-r--r--  1 austinf1  staff  281 Jul  6 15:31 scrapy.cfg\
+drwxr-xr-x  8 austinf1  staff  256 Jul  6 15:31 tutorial\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd tutorial/spiders \
+(base) austinf1@USSFO-80UMD6R spiders % ls\
+__init__.py\
+(base) austinf1@USSFO-80UMD6R spiders % vi quotes_spider.py\
+(base) austinf1@USSFO-80UMD6R spiders % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project/tutorial/spiders\
+(base) austinf1@USSFO-80UMD6R spiders % cd ../..\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+scrapy.cfg	tutorial\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy crawl quotes\
+Traceback (most recent call last):\
+  File "/Users/austinf1/miniconda3/bin/scrapy", line 8, in <module>\
+    sys.exit(execute())\
+  File "/Users/austinf1/miniconda3/lib/python3.8/site-packages/scrapy/cmdline.py", line 114, in execute\
+    settings = get_project_settings()\
+  File "/Users/austinf1/miniconda3/lib/python3.8/site-packages/scrapy/utils/project.py", line 69, in get_project_settings\
+    settings.setmodule(settings_module_path, priority='project')\
+  File "/Users/austinf1/miniconda3/lib/python3.8/site-packages/scrapy/settings/__init__.py", line 287, in setmodule\
+    module = import_module(module)\
+  File "/Users/austinf1/miniconda3/lib/python3.8/importlib/__init__.py", line 127, in import_module\
+    return _bootstrap._gcd_import(name[level:], package, level)\
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import\
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load\
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load_unlocked\
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed\
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import\
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load\
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked\
+ModuleNotFoundError: No module named 'scrapy_mini_project'\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls -l\
+total 8\
+-rw-r--r--  1 austinf1  staff  281 Jul  6 15:31 scrapy.cfg\
+drwxr-xr-x  8 austinf1  staff  256 Jul  6 15:31 tutorial\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % mv tutorial scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy crawl quotes            \
+2021-07-06 15:36:58 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: scrapy_mini_project)\
+2021-07-06 15:36:58 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.2 (default, Mar 26 2020, 10:43:30) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.2.1, Platform macOS-10.15.7-x86_64-i386-64bit\
+2021-07-06 15:36:58 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor\
+2021-07-06 15:36:58 [scrapy.crawler] INFO: Overridden settings:\
+\{'BOT_NAME': 'scrapy_mini_project',\
+ 'NEWSPIDER_MODULE': 'scrapy_mini_project.spiders',\
+ 'ROBOTSTXT_OBEY': True,\
+ 'SPIDER_MODULES': ['scrapy_mini_project.spiders']\}\
+2021-07-06 15:36:58 [scrapy.extensions.telnet] INFO: Telnet Password: ed5657d931891f32\
+2021-07-06 15:36:58 [scrapy.middleware] INFO: Enabled extensions:\
+['scrapy.extensions.corestats.CoreStats',\
+ 'scrapy.extensions.telnet.TelnetConsole',\
+ 'scrapy.extensions.memusage.MemoryUsage',\
+ 'scrapy.extensions.logstats.LogStats']\
+2021-07-06 15:36:58 [scrapy.middleware] INFO: Enabled downloader middlewares:\
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',\
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',\
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',\
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',\
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',\
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',\
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',\
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',\
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',\
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']\
+2021-07-06 15:36:58 [scrapy.middleware] INFO: Enabled spider middlewares:\
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',\
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',\
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',\
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',\
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']\
+2021-07-06 15:36:58 [scrapy.middleware] INFO: Enabled item pipelines:\
+[]\
+2021-07-06 15:36:58 [scrapy.core.engine] INFO: Spider opened\
+2021-07-06 15:36:58 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)\
+2021-07-06 15:36:58 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023\
+2021-07-06 15:36:59 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)\
+2021-07-06 15:36:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/1/> (referer: None)\
+2021-07-06 15:36:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/2/> (referer: None)\
+2021-07-06 15:36:59 [quotes] DEBUG: Saved file quotes-1.html\
+2021-07-06 15:36:59 [quotes] DEBUG: Saved file quotes-2.html\
+2021-07-06 15:36:59 [scrapy.core.engine] INFO: Closing spider (finished)\
+2021-07-06 15:36:59 [scrapy.statscollectors] INFO: Dumping Scrapy stats:\
+\{'downloader/request_bytes': 693,\
+ 'downloader/request_count': 3,\
+ 'downloader/request_method_count/GET': 3,\
+ 'downloader/response_bytes': 5653,\
+ 'downloader/response_count': 3,\
+ 'downloader/response_status_count/200': 2,\
+ 'downloader/response_status_count/404': 1,\
+ 'elapsed_time_seconds': 0.581746,\
+ 'finish_reason': 'finished',\
+ 'finish_time': datetime.datetime(2021, 7, 6, 22, 36, 59, 577798),\
+ 'log_count/DEBUG': 5,\
+ 'log_count/INFO': 10,\
+ 'memusage/max': 50171904,\
+ 'memusage/startup': 50167808,\
+ 'response_received_count': 3,\
+ 'robotstxt/request_count': 1,\
+ 'robotstxt/response_count': 1,\
+ 'robotstxt/response_status_count/404': 1,\
+ 'scheduler/dequeued': 2,\
+ 'scheduler/dequeued/memory': 2,\
+ 'scheduler/enqueued': 2,\
+ 'scheduler/enqueued/memory': 2,\
+ 'start_time': datetime.datetime(2021, 7, 6, 22, 36, 58, 996052)\}\
+2021-07-06 15:36:59 [scrapy.core.engine] INFO: Spider closed (finished)\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+quotes-1.html		quotes-2.html		scrapy.cfg		scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy shell 'http://quotes.toscrape.com/page/1/'\
+2021-07-06 15:38:46 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: scrapy_mini_project)\
+2021-07-06 15:38:46 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.2 (default, Mar 26 2020, 10:43:30) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.2.1, Platform macOS-10.15.7-x86_64-i386-64bit\
+2021-07-06 15:38:46 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor\
+2021-07-06 15:38:46 [scrapy.crawler] INFO: Overridden settings:\
+\{'BOT_NAME': 'scrapy_mini_project',\
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',\
+ 'LOGSTATS_INTERVAL': 0,\
+ 'NEWSPIDER_MODULE': 'scrapy_mini_project.spiders',\
+ 'ROBOTSTXT_OBEY': True,\
+ 'SPIDER_MODULES': ['scrapy_mini_project.spiders']\}\
+2021-07-06 15:38:46 [scrapy.extensions.telnet] INFO: Telnet Password: 9c30a9f2f6178c96\
+2021-07-06 15:38:46 [scrapy.middleware] INFO: Enabled extensions:\
+['scrapy.extensions.corestats.CoreStats',\
+ 'scrapy.extensions.telnet.TelnetConsole',\
+ 'scrapy.extensions.memusage.MemoryUsage']\
+2021-07-06 15:38:47 [scrapy.middleware] INFO: Enabled downloader middlewares:\
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',\
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',\
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',\
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',\
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',\
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',\
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',\
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',\
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',\
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']\
+2021-07-06 15:38:47 [scrapy.middleware] INFO: Enabled spider middlewares:\
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',\
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',\
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',\
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',\
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']\
+2021-07-06 15:38:47 [scrapy.middleware] INFO: Enabled item pipelines:\
+[]\
+2021-07-06 15:38:47 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023\
+2021-07-06 15:38:47 [scrapy.core.engine] INFO: Spider opened\
+2021-07-06 15:38:47 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)\
+2021-07-06 15:38:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/1/> (referer: None)\
+2021-07-06 15:38:47 [asyncio] DEBUG: Using selector: KqueueSelector\
+[s] Available Scrapy objects:\
+[s]   scrapy     scrapy module (contains scrapy.Request, scrapy.Selector, etc)\
+[s]   crawler    <scrapy.crawler.Crawler object at 0x7ff1c8ae67c0>\
+[s]   item       \{\}\
+[s]   request    <GET http://quotes.toscrape.com/page/1/>\
+[s]   response   <200 http://quotes.toscrape.com/page/1/>\
+[s]   settings   <scrapy.settings.Settings object at 0x7ff1c8ae6760>\
+[s]   spider     <DefaultSpider 'default' at 0x7ff1e849fdf0>\
+[s] Useful shortcuts:\
+[s]   fetch(url[, redirect=True]) Fetch URL and update local objects (by default, redirects are followed)\
+[s]   fetch(req)                  Fetch a scrapy.Request and update local objects \
+[s]   shelp()           Shell help (print this help)\
+[s]   view(response)    View response in a browser\
+2021-07-06 15:38:47 [asyncio] DEBUG: Using selector: KqueueSelector\
+\cf3 In [
+\f1\b \cf4 1
+\f0\b0 \cf3 ]: \cf2 response.css(\cf5 'title'\cf2 )\
+\cf6 Out[
+\f1\b \cf7 1
+\f0\b0 \cf6 ]: \cf2 [<Selector xpath='descendant-or-self::title' data='<title>Quotes to Scrape</title>'>]\
+\
+\cf3 In [
+\f1\b \cf4 2
+\f0\b0 \cf3 ]: \cf2 response.css(\cf5 'title::text'\cf2 ).getall()\
+\cf6 Out[
+\f1\b \cf7 2
+\f0\b0 \cf6 ]: \cf2 ['Quotes to Scrape']\
+\
+\cf3 In [
+\f1\b \cf4 3
+\f0\b0 \cf3 ]: \cf2 response.css(\cf5 'title'\cf2 ).getall()\
+\cf6 Out[
+\f1\b \cf7 3
+\f0\b0 \cf6 ]: \cf2 ['<title>Quotes to Scrape</title>']\
+\
+\cf3 In [
+\f1\b \cf4 4
+\f0\b0 \cf3 ]: \cf2 response.css(\cf5 'title::text'\cf2 ).get()\
+\cf6 Out[
+\f1\b \cf7 4
+\f0\b0 \cf6 ]: \cf2 'Quotes to Scrape'\
+\
+\cf3 In [
+\f1\b \cf4 5
+\f0\b0 \cf3 ]: \cf2 response.css(\cf5 'title::text'\cf2 )[\cf3 0\cf2 ].get()\
+\cf6 Out[
+\f1\b \cf7 5
+\f0\b0 \cf6 ]: \cf2 'Quotes to Scrape'\
+\
+\cf3 In [
+\f1\b \cf4 6
+\f0\b0 \cf3 ]: \cf2 response.css(\cf5 'title::text'\cf2 ).re(\cf5 r'Quotes.*'\cf2 )\
+\cf6 Out[
+\f1\b \cf7 6
+\f0\b0 \cf6 ]: \cf2 ['Quotes to Scrape']\
+\
+\cf3 In [
+\f1\b \cf4 7
+\f0\b0 \cf3 ]: \cf2 response.css(\cf5 'title::text'\cf2 ).re(\cf5 r'(\\w+) to (\\w+)'\cf2 )\
+\cf6 Out[
+\f1\b \cf7 7
+\f0\b0 \cf6 ]: \cf2 ['Quotes', 'Scrape']\
+\
+\cf3 In [
+\f1\b \cf4 8
+\f0\b0 \cf3 ]: \cf2 response.xpath(\cf5 '//title'\cf2 )\
+\cf6 Out[
+\f1\b \cf7 8
+\f0\b0 \cf6 ]: \cf2 [<Selector xpath='//title' data='<title>Quotes to Scrape</title>'>]\
+\
+\cf3 In [
+\f1\b \cf4 9
+\f0\b0 \cf3 ]: \cf2 response.xpath(\cf5 '//title/text()'\cf2 ).get()\
+\cf6 Out[
+\f1\b \cf7 9
+\f0\b0 \cf6 ]: \cf2 'Quotes to Scrape'\
+\
+\cf3 In [
+\f1\b \cf4 10
+\f0\b0 \cf3 ]: \cf2 scrapy shell \cf5 'http://quotes.toscrape.com'\cf2 \
+\cf8   File \cf9 "<ipython-input-10-0d6f9b6b5eb2>"\cf8 , line \cf9 1\cf2 \
+\cf10     scrapy shell 'http://quotes.toscrape.com'\cf2 \
+           ^\
+\cf10 SyntaxError:\cf2  invalid syntax\
+\
+\
+\
+zsh: suspended  scrapy shell 'http://quotes.toscrape.com/page/1/'\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy shell 'http://quotes.toscrape.com'        \
+2021-07-06 15:41:08 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: scrapy_mini_project)\
+2021-07-06 15:41:08 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.2 (default, Mar 26 2020, 10:43:30) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.2.1, Platform macOS-10.15.7-x86_64-i386-64bit\
+2021-07-06 15:41:08 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor\
+2021-07-06 15:41:08 [scrapy.crawler] INFO: Overridden settings:\
+\{'BOT_NAME': 'scrapy_mini_project',\
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',\
+ 'LOGSTATS_INTERVAL': 0,\
+ 'NEWSPIDER_MODULE': 'scrapy_mini_project.spiders',\
+ 'ROBOTSTXT_OBEY': True,\
+ 'SPIDER_MODULES': ['scrapy_mini_project.spiders']\}\
+2021-07-06 15:41:08 [scrapy.extensions.telnet] INFO: Telnet Password: 07c7cf144f0807a5\
+2021-07-06 15:41:08 [scrapy.middleware] INFO: Enabled extensions:\
+['scrapy.extensions.corestats.CoreStats',\
+ 'scrapy.extensions.telnet.TelnetConsole',\
+ 'scrapy.extensions.memusage.MemoryUsage']\
+2021-07-06 15:41:08 [scrapy.middleware] INFO: Enabled downloader middlewares:\
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',\
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',\
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',\
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',\
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',\
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',\
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',\
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',\
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',\
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']\
+2021-07-06 15:41:08 [scrapy.middleware] INFO: Enabled spider middlewares:\
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',\
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',\
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',\
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',\
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']\
+2021-07-06 15:41:08 [scrapy.middleware] INFO: Enabled item pipelines:\
+[]\
+2021-07-06 15:41:08 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024\
+2021-07-06 15:41:08 [scrapy.core.engine] INFO: Spider opened\
+2021-07-06 15:41:08 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)\
+2021-07-06 15:41:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com> (referer: None)\
+2021-07-06 15:41:09 [asyncio] DEBUG: Using selector: KqueueSelector\
+[s] Available Scrapy objects:\
+[s]   scrapy     scrapy module (contains scrapy.Request, scrapy.Selector, etc)\
+[s]   crawler    <scrapy.crawler.Crawler object at 0x7fbd781577f0>\
+[s]   item       \{\}\
+[s]   request    <GET http://quotes.toscrape.com>\
+[s]   response   <200 http://quotes.toscrape.com>\
+[s]   settings   <scrapy.settings.Settings object at 0x7fbd78157790>\
+[s]   spider     <DefaultSpider 'default' at 0x7fbd78290a90>\
+[s] Useful shortcuts:\
+[s]   fetch(url[, redirect=True]) Fetch URL and update local objects (by default, redirects are followed)\
+[s]   fetch(req)                  Fetch a scrapy.Request and update local objects \
+[s]   shelp()           Shell help (print this help)\
+[s]   view(response)    View response in a browser\
+2021-07-06 15:41:09 [asyncio] DEBUG: Using selector: KqueueSelector\
+\cf3 In [
+\f1\b \cf4 1
+\f0\b0 \cf3 ]: \cf2 quote = response.css(\cf5 "div.quote"\cf2 )[\cf3 0\cf2 ]\
+\
+\cf3 In [
+\f1\b \cf4 2
+\f0\b0 \cf3 ]: \cf2 text = quote.css(\cf5 "span.text::text"\cf2 ).get()\
+\
+\cf3 In [
+\f1\b \cf4 3
+\f0\b0 \cf3 ]: \cf2 text\
+\cf6 Out[
+\f1\b \cf7 3
+\f0\b0 \cf6 ]: \cf2 '\'93The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.\'94'\
+\
+\cf3 In [
+\f1\b \cf4 4
+\f0\b0 \cf3 ]: \cf2 author = quote.css(\cf5 "small.author::text"\cf2 ).get()\
+\
+\cf3 In [
+\f1\b \cf4 5
+\f0\b0 \cf3 ]: \cf2 author\
+\cf6 Out[
+\f1\b \cf7 5
+\f0\b0 \cf6 ]: \cf2 'Albert Einstein'\
+\
+\cf3 In [
+\f1\b \cf4 6
+\f0\b0 \cf3 ]: \cf2 tags = quote.css(\cf5 "div.tags a.tag::text"\cf2 ).getall()\
+\
+\cf3 In [
+\f1\b \cf4 7
+\f0\b0 \cf3 ]: \cf2 tags\
+\cf6 Out[
+\f1\b \cf7 7
+\f0\b0 \cf6 ]: \cf2 ['change', 'deep-thoughts', 'thinking', 'world']\
+\
+\
+zsh: suspended  scrapy shell 'http://quotes.toscrape.com'\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+quotes-1.html		quotes-2.html		scrapy.cfg		scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd scrapy_mini_project \
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+__init__.py	__pycache__	items.py	middlewares.py	pipelines.py	settings.py	spiders\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd spiders \
+(base) austinf1@USSFO-80UMD6R spiders % ls\
+__init__.py		__pycache__		quotes_spider.py\
+(base) austinf1@USSFO-80UMD6R spiders % vi quotes_spider.py \
+(base) austinf1@USSFO-80UMD6R spiders % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project/scrapy_mini_project/spiders\
+(base) austinf1@USSFO-80UMD6R spiders % cd ../..\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+quotes-1.html		quotes-2.html		scrapy.cfg		scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy crawl quotes\
+2021-07-06 15:44:54 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: scrapy_mini_project)\
+2021-07-06 15:44:54 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.2 (default, Mar 26 2020, 10:43:30) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.2.1, Platform macOS-10.15.7-x86_64-i386-64bit\
+2021-07-06 15:44:54 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor\
+2021-07-06 15:44:54 [scrapy.crawler] INFO: Overridden settings:\
+\{'BOT_NAME': 'scrapy_mini_project',\
+ 'NEWSPIDER_MODULE': 'scrapy_mini_project.spiders',\
+ 'ROBOTSTXT_OBEY': True,\
+ 'SPIDER_MODULES': ['scrapy_mini_project.spiders']\}\
+2021-07-06 15:44:54 [scrapy.extensions.telnet] INFO: Telnet Password: 5caad765a3a49a98\
+2021-07-06 15:44:54 [scrapy.middleware] INFO: Enabled extensions:\
+['scrapy.extensions.corestats.CoreStats',\
+ 'scrapy.extensions.telnet.TelnetConsole',\
+ 'scrapy.extensions.memusage.MemoryUsage',\
+ 'scrapy.extensions.logstats.LogStats']\
+2021-07-06 15:44:54 [scrapy.middleware] INFO: Enabled downloader middlewares:\
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',\
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',\
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',\
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',\
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',\
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',\
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',\
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',\
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',\
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']\
+2021-07-06 15:44:54 [scrapy.middleware] INFO: Enabled spider middlewares:\
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',\
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',\
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',\
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',\
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']\
+2021-07-06 15:44:54 [scrapy.middleware] INFO: Enabled item pipelines:\
+[]\
+2021-07-06 15:44:54 [scrapy.core.engine] INFO: Spider opened\
+2021-07-06 15:44:54 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)\
+2021-07-06 15:44:54 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025\
+2021-07-06 15:44:54 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)\
+2021-07-06 15:44:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/1/> (referer: None)\
+2021-07-06 15:44:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/2/> (referer: None)\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.\'94', 'author': 'Albert Einstein', 'tags': ['change', 'deep-thoughts', 'thinking', 'world']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93It is our choices, Harry, that show what we truly are, far more than our abilities.\'94', 'author': 'J.K. Rowling', 'tags': ['abilities', 'choices']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.\'94', 'author': 'Albert Einstein', 'tags': ['inspirational', 'life', 'live', 'miracle', 'miracles']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.\'94', 'author': 'Jane Austen', 'tags': ['aliteracy', 'books', 'classic', 'humor']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.\'94", 'author': 'Marilyn Monroe', 'tags': ['be-yourself', 'inspirational']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93Try not to become a man of success. Rather become a man of value.\'94', 'author': 'Albert Einstein', 'tags': ['adulthood', 'success', 'value']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93It is better to be hated for what you are than to be loved for what you are not.\'94', 'author': 'Andr\'e9 Gide', 'tags': ['life', 'love']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93I have not failed. I've just found 10,000 ways that won't work.\'94", 'author': 'Thomas A. Edison', 'tags': ['edison', 'failure', 'inspirational', 'paraphrased']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93A woman is like a tea bag; you never know how strong it is until it's in hot water.\'94", 'author': 'Eleanor Roosevelt', 'tags': ['misattributed-eleanor-roosevelt']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93A day without sunshine is like, you know, night.\'94', 'author': 'Steve Martin', 'tags': ['humor', 'obvious', 'simile']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93This life is what you make it. No matter what, you're going to mess up sometimes, it's a universal truth. But the good part is you get to decide how you're going to mess it up. Girls will be your friends - they'll act like it anyway. But just remember, some come, some go. The ones that stay with you through everything - they're your true best friends. Don't let go of them. Also remember, sisters make the best friends in the world. As for lovers, well, they'll come and go too. And baby, I hate to say it, most of them - actually pretty much all of them are going to break your heart, but you can't give up because if you give up, you'll never find your soulmate. You'll never find that half who makes you whole and that goes for everything. Just because you fail once, doesn't mean you're gonna fail at everything. Keep trying, hold on, and always, always, always believe in yourself, because if you don't, then who will, sweetie? So keep your head high, keep your chin up, and most importantly, keep smiling, because life's a beautiful thing and there's so much to smile about.\'94", 'author': 'Marilyn Monroe', 'tags': ['friends', 'heartbreak', 'inspirational', 'life', 'love', 'sisters']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\'94', 'author': 'J.K. Rowling', 'tags': ['courage', 'friends']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93If you can't explain it to a six year old, you don't understand it yourself.\'94", 'author': 'Albert Einstein', 'tags': ['simplicity', 'understand']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93You may not be her first, her last, or her only. She loved before she may love again. But if she loves you now, what else matters? She's not perfect\'97you aren't either, and the two of you may never be perfect together but if she can make you laugh, cause you to think twice, and admit to being human and making mistakes, hold onto her and give her the most you can. She may not be thinking about you every second of the day, but she will give you a part of her that she knows you can break\'97her heart. So don't hurt her, don't change her, don't analyze and don't expect more than she can give. Smile when she makes you happy, let her know when she makes you mad, and miss her when she's not there.\'94", 'author': 'Bob Marley', 'tags': ['love']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I like nonsense, it wakes up the brain cells. Fantasy is a necessary ingredient in living.\'94', 'author': 'Dr. Seuss', 'tags': ['fantasy']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I may not have gone where I intended to go, but I think I have ended up where I needed to be.\'94', 'author': 'Douglas Adams', 'tags': ['life', 'navigation']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93The opposite of love is not hate, it's indifference. The opposite of art is not ugliness, it's indifference. The opposite of faith is not heresy, it's indifference. And the opposite of life is not death, it's indifference.\'94", 'author': 'Elie Wiesel', 'tags': ['activism', 'apathy', 'hate', 'indifference', 'inspirational', 'love', 'opposite', 'philosophy']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It is not a lack of love, but a lack of friendship that makes unhappy marriages.\'94', 'author': 'Friedrich Nietzsche', 'tags': ['friendship', 'lack-of-friendship', 'lack-of-love', 'love', 'marriage', 'unhappy-marriage']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Good friends, good books, and a sleepy conscience: this is the ideal life.\'94', 'author': 'Mark Twain', 'tags': ['books', 'contentment', 'friends', 'friendship', 'life']\}\
+2021-07-06 15:44:54 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Life is what happens to us while we are making other plans.\'94', 'author': 'Allen Saunders', 'tags': ['fate', 'life', 'misattributed-john-lennon', 'planning', 'plans']\}\
+2021-07-06 15:44:54 [scrapy.core.engine] INFO: Closing spider (finished)\
+2021-07-06 15:44:54 [scrapy.statscollectors] INFO: Dumping Scrapy stats:\
+\{'downloader/request_bytes': 693,\
+ 'downloader/request_count': 3,\
+ 'downloader/request_method_count/GET': 3,\
+ 'downloader/response_bytes': 5653,\
+ 'downloader/response_count': 3,\
+ 'downloader/response_status_count/200': 2,\
+ 'downloader/response_status_count/404': 1,\
+ 'elapsed_time_seconds': 0.491592,\
+ 'finish_reason': 'finished',\
+ 'finish_time': datetime.datetime(2021, 7, 6, 22, 44, 54, 734034),\
+ 'item_scraped_count': 20,\
+ 'log_count/DEBUG': 23,\
+ 'log_count/INFO': 10,\
+ 'memusage/max': 49860608,\
+ 'memusage/startup': 49860608,\
+ 'response_received_count': 3,\
+ 'robotstxt/request_count': 1,\
+ 'robotstxt/response_count': 1,\
+ 'robotstxt/response_status_count/404': 1,\
+ 'scheduler/dequeued': 2,\
+ 'scheduler/dequeued/memory': 2,\
+ 'scheduler/enqueued': 2,\
+ 'scheduler/enqueued/memory': 2,\
+ 'start_time': datetime.datetime(2021, 7, 6, 22, 44, 54, 242442)\}\
+2021-07-06 15:44:54 [scrapy.core.engine] INFO: Spider closed (finished)\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy crawl quotes -o quotes.json\
+2021-07-06 15:45:27 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: scrapy_mini_project)\
+2021-07-06 15:45:27 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.2 (default, Mar 26 2020, 10:43:30) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.2.1, Platform macOS-10.15.7-x86_64-i386-64bit\
+2021-07-06 15:45:27 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor\
+2021-07-06 15:45:27 [scrapy.crawler] INFO: Overridden settings:\
+\{'BOT_NAME': 'scrapy_mini_project',\
+ 'NEWSPIDER_MODULE': 'scrapy_mini_project.spiders',\
+ 'ROBOTSTXT_OBEY': True,\
+ 'SPIDER_MODULES': ['scrapy_mini_project.spiders']\}\
+2021-07-06 15:45:27 [scrapy.extensions.telnet] INFO: Telnet Password: 6e47db2360b4e7e7\
+2021-07-06 15:45:27 [scrapy.middleware] INFO: Enabled extensions:\
+['scrapy.extensions.corestats.CoreStats',\
+ 'scrapy.extensions.telnet.TelnetConsole',\
+ 'scrapy.extensions.memusage.MemoryUsage',\
+ 'scrapy.extensions.feedexport.FeedExporter',\
+ 'scrapy.extensions.logstats.LogStats']\
+2021-07-06 15:45:27 [scrapy.middleware] INFO: Enabled downloader middlewares:\
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',\
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',\
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',\
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',\
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',\
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',\
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',\
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',\
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',\
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']\
+2021-07-06 15:45:27 [scrapy.middleware] INFO: Enabled spider middlewares:\
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',\
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',\
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',\
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',\
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']\
+2021-07-06 15:45:27 [scrapy.middleware] INFO: Enabled item pipelines:\
+[]\
+2021-07-06 15:45:27 [scrapy.core.engine] INFO: Spider opened\
+2021-07-06 15:45:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)\
+2021-07-06 15:45:27 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025\
+2021-07-06 15:45:27 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)\
+2021-07-06 15:45:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/1/> (referer: None)\
+2021-07-06 15:45:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/2/> (referer: None)\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.\'94', 'author': 'Albert Einstein', 'tags': ['change', 'deep-thoughts', 'thinking', 'world']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93It is our choices, Harry, that show what we truly are, far more than our abilities.\'94', 'author': 'J.K. Rowling', 'tags': ['abilities', 'choices']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.\'94', 'author': 'Albert Einstein', 'tags': ['inspirational', 'life', 'live', 'miracle', 'miracles']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.\'94', 'author': 'Jane Austen', 'tags': ['aliteracy', 'books', 'classic', 'humor']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.\'94", 'author': 'Marilyn Monroe', 'tags': ['be-yourself', 'inspirational']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93Try not to become a man of success. Rather become a man of value.\'94', 'author': 'Albert Einstein', 'tags': ['adulthood', 'success', 'value']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93It is better to be hated for what you are than to be loved for what you are not.\'94', 'author': 'Andr\'e9 Gide', 'tags': ['life', 'love']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93I have not failed. I've just found 10,000 ways that won't work.\'94", 'author': 'Thomas A. Edison', 'tags': ['edison', 'failure', 'inspirational', 'paraphrased']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93A woman is like a tea bag; you never know how strong it is until it's in hot water.\'94", 'author': 'Eleanor Roosevelt', 'tags': ['misattributed-eleanor-roosevelt']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93A day without sunshine is like, you know, night.\'94', 'author': 'Steve Martin', 'tags': ['humor', 'obvious', 'simile']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93This life is what you make it. No matter what, you're going to mess up sometimes, it's a universal truth. But the good part is you get to decide how you're going to mess it up. Girls will be your friends - they'll act like it anyway. But just remember, some come, some go. The ones that stay with you through everything - they're your true best friends. Don't let go of them. Also remember, sisters make the best friends in the world. As for lovers, well, they'll come and go too. And baby, I hate to say it, most of them - actually pretty much all of them are going to break your heart, but you can't give up because if you give up, you'll never find your soulmate. You'll never find that half who makes you whole and that goes for everything. Just because you fail once, doesn't mean you're gonna fail at everything. Keep trying, hold on, and always, always, always believe in yourself, because if you don't, then who will, sweetie? So keep your head high, keep your chin up, and most importantly, keep smiling, because life's a beautiful thing and there's so much to smile about.\'94", 'author': 'Marilyn Monroe', 'tags': ['friends', 'heartbreak', 'inspirational', 'life', 'love', 'sisters']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\'94', 'author': 'J.K. Rowling', 'tags': ['courage', 'friends']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93If you can't explain it to a six year old, you don't understand it yourself.\'94", 'author': 'Albert Einstein', 'tags': ['simplicity', 'understand']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93You may not be her first, her last, or her only. She loved before she may love again. But if she loves you now, what else matters? She's not perfect\'97you aren't either, and the two of you may never be perfect together but if she can make you laugh, cause you to think twice, and admit to being human and making mistakes, hold onto her and give her the most you can. She may not be thinking about you every second of the day, but she will give you a part of her that she knows you can break\'97her heart. So don't hurt her, don't change her, don't analyze and don't expect more than she can give. Smile when she makes you happy, let her know when she makes you mad, and miss her when she's not there.\'94", 'author': 'Bob Marley', 'tags': ['love']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I like nonsense, it wakes up the brain cells. Fantasy is a necessary ingredient in living.\'94', 'author': 'Dr. Seuss', 'tags': ['fantasy']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I may not have gone where I intended to go, but I think I have ended up where I needed to be.\'94', 'author': 'Douglas Adams', 'tags': ['life', 'navigation']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93The opposite of love is not hate, it's indifference. The opposite of art is not ugliness, it's indifference. The opposite of faith is not heresy, it's indifference. And the opposite of life is not death, it's indifference.\'94", 'author': 'Elie Wiesel', 'tags': ['activism', 'apathy', 'hate', 'indifference', 'inspirational', 'love', 'opposite', 'philosophy']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It is not a lack of love, but a lack of friendship that makes unhappy marriages.\'94', 'author': 'Friedrich Nietzsche', 'tags': ['friendship', 'lack-of-friendship', 'lack-of-love', 'love', 'marriage', 'unhappy-marriage']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Good friends, good books, and a sleepy conscience: this is the ideal life.\'94', 'author': 'Mark Twain', 'tags': ['books', 'contentment', 'friends', 'friendship', 'life']\}\
+2021-07-06 15:45:27 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Life is what happens to us while we are making other plans.\'94', 'author': 'Allen Saunders', 'tags': ['fate', 'life', 'misattributed-john-lennon', 'planning', 'plans']\}\
+2021-07-06 15:45:27 [scrapy.core.engine] INFO: Closing spider (finished)\
+2021-07-06 15:45:27 [scrapy.extensions.feedexport] INFO: Stored json feed (20 items) in: quotes.json\
+2021-07-06 15:45:27 [scrapy.statscollectors] INFO: Dumping Scrapy stats:\
+\{'downloader/request_bytes': 693,\
+ 'downloader/request_count': 3,\
+ 'downloader/request_method_count/GET': 3,\
+ 'downloader/response_bytes': 5657,\
+ 'downloader/response_count': 3,\
+ 'downloader/response_status_count/200': 2,\
+ 'downloader/response_status_count/404': 1,\
+ 'elapsed_time_seconds': 0.36925,\
+ 'finish_reason': 'finished',\
+ 'finish_time': datetime.datetime(2021, 7, 6, 22, 45, 27, 508350),\
+ 'item_scraped_count': 20,\
+ 'log_count/DEBUG': 23,\
+ 'log_count/INFO': 11,\
+ 'memusage/max': 50098176,\
+ 'memusage/startup': 50098176,\
+ 'response_received_count': 3,\
+ 'robotstxt/request_count': 1,\
+ 'robotstxt/response_count': 1,\
+ 'robotstxt/response_status_count/404': 1,\
+ 'scheduler/dequeued': 2,\
+ 'scheduler/dequeued/memory': 2,\
+ 'scheduler/enqueued': 2,\
+ 'scheduler/enqueued/memory': 2,\
+ 'start_time': datetime.datetime(2021, 7, 6, 22, 45, 27, 139100)\}\
+2021-07-06 15:45:27 [scrapy.core.engine] INFO: Spider closed (finished)\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+quotes-1.html		quotes-2.html		quotes.json		scrapy.cfg		scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % les quotes.json \
+zsh: command not found: les\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % less quotes.json\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy crawl quotes -o quotes.jl\
+2021-07-06 15:46:04 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: scrapy_mini_project)\
+2021-07-06 15:46:04 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.2 (default, Mar 26 2020, 10:43:30) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.2.1, Platform macOS-10.15.7-x86_64-i386-64bit\
+2021-07-06 15:46:04 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor\
+2021-07-06 15:46:04 [scrapy.crawler] INFO: Overridden settings:\
+\{'BOT_NAME': 'scrapy_mini_project',\
+ 'NEWSPIDER_MODULE': 'scrapy_mini_project.spiders',\
+ 'ROBOTSTXT_OBEY': True,\
+ 'SPIDER_MODULES': ['scrapy_mini_project.spiders']\}\
+2021-07-06 15:46:04 [scrapy.extensions.telnet] INFO: Telnet Password: 42c4f6c2d235e160\
+2021-07-06 15:46:04 [scrapy.middleware] INFO: Enabled extensions:\
+['scrapy.extensions.corestats.CoreStats',\
+ 'scrapy.extensions.telnet.TelnetConsole',\
+ 'scrapy.extensions.memusage.MemoryUsage',\
+ 'scrapy.extensions.feedexport.FeedExporter',\
+ 'scrapy.extensions.logstats.LogStats']\
+2021-07-06 15:46:04 [scrapy.middleware] INFO: Enabled downloader middlewares:\
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',\
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',\
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',\
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',\
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',\
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',\
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',\
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',\
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',\
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']\
+2021-07-06 15:46:04 [scrapy.middleware] INFO: Enabled spider middlewares:\
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',\
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',\
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',\
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',\
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']\
+2021-07-06 15:46:04 [scrapy.middleware] INFO: Enabled item pipelines:\
+[]\
+2021-07-06 15:46:04 [scrapy.core.engine] INFO: Spider opened\
+2021-07-06 15:46:04 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)\
+2021-07-06 15:46:04 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025\
+2021-07-06 15:46:04 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)\
+2021-07-06 15:46:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/1/> (referer: None)\
+2021-07-06 15:46:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/2/> (referer: None)\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.\'94', 'author': 'Albert Einstein', 'tags': ['change', 'deep-thoughts', 'thinking', 'world']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93It is our choices, Harry, that show what we truly are, far more than our abilities.\'94', 'author': 'J.K. Rowling', 'tags': ['abilities', 'choices']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.\'94', 'author': 'Albert Einstein', 'tags': ['inspirational', 'life', 'live', 'miracle', 'miracles']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.\'94', 'author': 'Jane Austen', 'tags': ['aliteracy', 'books', 'classic', 'humor']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.\'94", 'author': 'Marilyn Monroe', 'tags': ['be-yourself', 'inspirational']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93Try not to become a man of success. Rather become a man of value.\'94', 'author': 'Albert Einstein', 'tags': ['adulthood', 'success', 'value']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93It is better to be hated for what you are than to be loved for what you are not.\'94', 'author': 'Andr\'e9 Gide', 'tags': ['life', 'love']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93I have not failed. I've just found 10,000 ways that won't work.\'94", 'author': 'Thomas A. Edison', 'tags': ['edison', 'failure', 'inspirational', 'paraphrased']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': "\'93A woman is like a tea bag; you never know how strong it is until it's in hot water.\'94", 'author': 'Eleanor Roosevelt', 'tags': ['misattributed-eleanor-roosevelt']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/1/>\
+\{'text': '\'93A day without sunshine is like, you know, night.\'94', 'author': 'Steve Martin', 'tags': ['humor', 'obvious', 'simile']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93This life is what you make it. No matter what, you're going to mess up sometimes, it's a universal truth. But the good part is you get to decide how you're going to mess it up. Girls will be your friends - they'll act like it anyway. But just remember, some come, some go. The ones that stay with you through everything - they're your true best friends. Don't let go of them. Also remember, sisters make the best friends in the world. As for lovers, well, they'll come and go too. And baby, I hate to say it, most of them - actually pretty much all of them are going to break your heart, but you can't give up because if you give up, you'll never find your soulmate. You'll never find that half who makes you whole and that goes for everything. Just because you fail once, doesn't mean you're gonna fail at everything. Keep trying, hold on, and always, always, always believe in yourself, because if you don't, then who will, sweetie? So keep your head high, keep your chin up, and most importantly, keep smiling, because life's a beautiful thing and there's so much to smile about.\'94", 'author': 'Marilyn Monroe', 'tags': ['friends', 'heartbreak', 'inspirational', 'life', 'love', 'sisters']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\'94', 'author': 'J.K. Rowling', 'tags': ['courage', 'friends']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93If you can't explain it to a six year old, you don't understand it yourself.\'94", 'author': 'Albert Einstein', 'tags': ['simplicity', 'understand']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93You may not be her first, her last, or her only. She loved before she may love again. But if she loves you now, what else matters? She's not perfect\'97you aren't either, and the two of you may never be perfect together but if she can make you laugh, cause you to think twice, and admit to being human and making mistakes, hold onto her and give her the most you can. She may not be thinking about you every second of the day, but she will give you a part of her that she knows you can break\'97her heart. So don't hurt her, don't change her, don't analyze and don't expect more than she can give. Smile when she makes you happy, let her know when she makes you mad, and miss her when she's not there.\'94", 'author': 'Bob Marley', 'tags': ['love']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I like nonsense, it wakes up the brain cells. Fantasy is a necessary ingredient in living.\'94', 'author': 'Dr. Seuss', 'tags': ['fantasy']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I may not have gone where I intended to go, but I think I have ended up where I needed to be.\'94', 'author': 'Douglas Adams', 'tags': ['life', 'navigation']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93The opposite of love is not hate, it's indifference. The opposite of art is not ugliness, it's indifference. The opposite of faith is not heresy, it's indifference. And the opposite of life is not death, it's indifference.\'94", 'author': 'Elie Wiesel', 'tags': ['activism', 'apathy', 'hate', 'indifference', 'inspirational', 'love', 'opposite', 'philosophy']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It is not a lack of love, but a lack of friendship that makes unhappy marriages.\'94', 'author': 'Friedrich Nietzsche', 'tags': ['friendship', 'lack-of-friendship', 'lack-of-love', 'love', 'marriage', 'unhappy-marriage']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Good friends, good books, and a sleepy conscience: this is the ideal life.\'94', 'author': 'Mark Twain', 'tags': ['books', 'contentment', 'friends', 'friendship', 'life']\}\
+2021-07-06 15:46:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Life is what happens to us while we are making other plans.\'94', 'author': 'Allen Saunders', 'tags': ['fate', 'life', 'misattributed-john-lennon', 'planning', 'plans']\}\
+2021-07-06 15:46:04 [scrapy.core.engine] INFO: Closing spider (finished)\
+2021-07-06 15:46:04 [scrapy.extensions.feedexport] INFO: Stored jl feed (20 items) in: quotes.jl\
+2021-07-06 15:46:04 [scrapy.statscollectors] INFO: Dumping Scrapy stats:\
+\{'downloader/request_bytes': 693,\
+ 'downloader/request_count': 3,\
+ 'downloader/request_method_count/GET': 3,\
+ 'downloader/response_bytes': 5642,\
+ 'downloader/response_count': 3,\
+ 'downloader/response_status_count/200': 2,\
+ 'downloader/response_status_count/404': 1,\
+ 'elapsed_time_seconds': 0.374899,\
+ 'finish_reason': 'finished',\
+ 'finish_time': datetime.datetime(2021, 7, 6, 22, 46, 4, 795730),\
+ 'item_scraped_count': 20,\
+ 'log_count/DEBUG': 23,\
+ 'log_count/INFO': 11,\
+ 'memusage/max': 51056640,\
+ 'memusage/startup': 51056640,\
+ 'response_received_count': 3,\
+ 'robotstxt/request_count': 1,\
+ 'robotstxt/response_count': 1,\
+ 'robotstxt/response_status_count/404': 1,\
+ 'scheduler/dequeued': 2,\
+ 'scheduler/dequeued/memory': 2,\
+ 'scheduler/enqueued': 2,\
+ 'scheduler/enqueued/memory': 2,\
+ 'start_time': datetime.datetime(2021, 7, 6, 22, 46, 4, 420831)\}\
+2021-07-06 15:46:04 [scrapy.core.engine] INFO: Spider closed (finished)\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+quotes-1.html		quotes.jl		scrapy.cfg\
+quotes-2.html		quotes.json		scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % less quotes.jl\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+quotes-1.html		quotes.jl		scrapy.cfg\
+quotes-2.html		quotes.json		scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd scrapy_mini_project/spiders \
+(base) austinf1@USSFO-80UMD6R spiders % ls\
+__init__.py		__pycache__		quotes_spider.py\
+(base) austinf1@USSFO-80UMD6R spiders % vi quotes_spider.py \
+(base) austinf1@USSFO-80UMD6R spiders % vi quotes_spider.py\
+(base) austinf1@USSFO-80UMD6R spiders % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project/scrapy_mini_project/spiders\
+(base) austinf1@USSFO-80UMD6R spiders % ls\
+__init__.py		__pycache__		quotes_spider.py\
+(base) austinf1@USSFO-80UMD6R spiders % vi toscrape-css.py\
+(base) austinf1@USSFO-80UMD6R spiders % ls\
+__init__.py		__pycache__		quotes_spider.py\
+(base) austinf1@USSFO-80UMD6R spiders % vi toscrape-css.py\
+(base) austinf1@USSFO-80UMD6R spiders % ls\
+__init__.py		__pycache__		quotes_spider.py	toscrape-css.py\
+(base) austinf1@USSFO-80UMD6R spiders % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project/scrapy_mini_project/spiders\
+(base) austinf1@USSFO-80UMD6R spiders % cd ../..\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+quotes-1.html		quotes.jl		scrapy.cfg\
+quotes-2.html		quotes.json		scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy crawl toscrape-css -o css-scraper-results.json\
+2021-07-06 15:52:18 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: scrapy_mini_project)\
+2021-07-06 15:52:18 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.2 (default, Mar 26 2020, 10:43:30) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.2.1, Platform macOS-10.15.7-x86_64-i386-64bit\
+2021-07-06 15:52:18 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor\
+2021-07-06 15:52:18 [scrapy.crawler] INFO: Overridden settings:\
+\{'BOT_NAME': 'scrapy_mini_project',\
+ 'NEWSPIDER_MODULE': 'scrapy_mini_project.spiders',\
+ 'ROBOTSTXT_OBEY': True,\
+ 'SPIDER_MODULES': ['scrapy_mini_project.spiders']\}\
+2021-07-06 15:52:18 [scrapy.extensions.telnet] INFO: Telnet Password: ad995a57382df6fa\
+2021-07-06 15:52:18 [scrapy.middleware] INFO: Enabled extensions:\
+['scrapy.extensions.corestats.CoreStats',\
+ 'scrapy.extensions.telnet.TelnetConsole',\
+ 'scrapy.extensions.memusage.MemoryUsage',\
+ 'scrapy.extensions.feedexport.FeedExporter',\
+ 'scrapy.extensions.logstats.LogStats']\
+2021-07-06 15:52:18 [scrapy.middleware] INFO: Enabled downloader middlewares:\
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',\
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',\
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',\
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',\
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',\
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',\
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',\
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',\
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',\
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']\
+2021-07-06 15:52:18 [scrapy.middleware] INFO: Enabled spider middlewares:\
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',\
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',\
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',\
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',\
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']\
+2021-07-06 15:52:18 [scrapy.middleware] INFO: Enabled item pipelines:\
+[]\
+2021-07-06 15:52:18 [scrapy.core.engine] INFO: Spider opened\
+2021-07-06 15:52:18 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)\
+2021-07-06 15:52:18 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025\
+2021-07-06 15:52:18 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)\
+2021-07-06 15:52:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/> (referer: None)\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.\'94', 'author': 'Albert Einstein', 'tags': ['change', 'deep-thoughts', 'thinking', 'world']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93It is our choices, Harry, that show what we truly are, far more than our abilities.\'94', 'author': 'J.K. Rowling', 'tags': ['abilities', 'choices']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.\'94', 'author': 'Albert Einstein', 'tags': ['inspirational', 'life', 'live', 'miracle', 'miracles']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.\'94', 'author': 'Jane Austen', 'tags': ['aliteracy', 'books', 'classic', 'humor']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': "\'93Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.\'94", 'author': 'Marilyn Monroe', 'tags': ['be-yourself', 'inspirational']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93Try not to become a man of success. Rather become a man of value.\'94', 'author': 'Albert Einstein', 'tags': ['adulthood', 'success', 'value']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93It is better to be hated for what you are than to be loved for what you are not.\'94', 'author': 'Andr\'e9 Gide', 'tags': ['life', 'love']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': "\'93I have not failed. I've just found 10,000 ways that won't work.\'94", 'author': 'Thomas A. Edison', 'tags': ['edison', 'failure', 'inspirational', 'paraphrased']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': "\'93A woman is like a tea bag; you never know how strong it is until it's in hot water.\'94", 'author': 'Eleanor Roosevelt', 'tags': ['misattributed-eleanor-roosevelt']\}\
+2021-07-06 15:52:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93A day without sunshine is like, you know, night.\'94', 'author': 'Steve Martin', 'tags': ['humor', 'obvious', 'simile']\}\
+2021-07-06 15:52:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/2/> (referer: http://quotes.toscrape.com/)\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93This life is what you make it. No matter what, you're going to mess up sometimes, it's a universal truth. But the good part is you get to decide how you're going to mess it up. Girls will be your friends - they'll act like it anyway. But just remember, some come, some go. The ones that stay with you through everything - they're your true best friends. Don't let go of them. Also remember, sisters make the best friends in the world. As for lovers, well, they'll come and go too. And baby, I hate to say it, most of them - actually pretty much all of them are going to break your heart, but you can't give up because if you give up, you'll never find your soulmate. You'll never find that half who makes you whole and that goes for everything. Just because you fail once, doesn't mean you're gonna fail at everything. Keep trying, hold on, and always, always, always believe in yourself, because if you don't, then who will, sweetie? So keep your head high, keep your chin up, and most importantly, keep smiling, because life's a beautiful thing and there's so much to smile about.\'94", 'author': 'Marilyn Monroe', 'tags': ['friends', 'heartbreak', 'inspirational', 'life', 'love', 'sisters']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\'94', 'author': 'J.K. Rowling', 'tags': ['courage', 'friends']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93If you can't explain it to a six year old, you don't understand it yourself.\'94", 'author': 'Albert Einstein', 'tags': ['simplicity', 'understand']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93You may not be her first, her last, or her only. She loved before she may love again. But if she loves you now, what else matters? She's not perfect\'97you aren't either, and the two of you may never be perfect together but if she can make you laugh, cause you to think twice, and admit to being human and making mistakes, hold onto her and give her the most you can. She may not be thinking about you every second of the day, but she will give you a part of her that she knows you can break\'97her heart. So don't hurt her, don't change her, don't analyze and don't expect more than she can give. Smile when she makes you happy, let her know when she makes you mad, and miss her when she's not there.\'94", 'author': 'Bob Marley', 'tags': ['love']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I like nonsense, it wakes up the brain cells. Fantasy is a necessary ingredient in living.\'94', 'author': 'Dr. Seuss', 'tags': ['fantasy']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I may not have gone where I intended to go, but I think I have ended up where I needed to be.\'94', 'author': 'Douglas Adams', 'tags': ['life', 'navigation']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93The opposite of love is not hate, it's indifference. The opposite of art is not ugliness, it's indifference. The opposite of faith is not heresy, it's indifference. And the opposite of life is not death, it's indifference.\'94", 'author': 'Elie Wiesel', 'tags': ['activism', 'apathy', 'hate', 'indifference', 'inspirational', 'love', 'opposite', 'philosophy']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It is not a lack of love, but a lack of friendship that makes unhappy marriages.\'94', 'author': 'Friedrich Nietzsche', 'tags': ['friendship', 'lack-of-friendship', 'lack-of-love', 'love', 'marriage', 'unhappy-marriage']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Good friends, good books, and a sleepy conscience: this is the ideal life.\'94', 'author': 'Mark Twain', 'tags': ['books', 'contentment', 'friends', 'friendship', 'life']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Life is what happens to us while we are making other plans.\'94', 'author': 'Allen Saunders', 'tags': ['fate', 'life', 'misattributed-john-lennon', 'planning', 'plans']\}\
+2021-07-06 15:52:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/3/> (referer: http://quotes.toscrape.com/page/2/)\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93I love you without knowing how, or when, or from where. I love you simply, without problems or pride: I love you in this way because I do not know any other way of loving but this, in which there is no I or you, so intimate that your hand upon my chest is my hand, so intimate that when I fall asleep your eyes close.\'94', 'author': 'Pablo Neruda', 'tags': ['love', 'poetry']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93For every minute you are angry you lose sixty seconds of happiness.\'94', 'author': 'Ralph Waldo Emerson', 'tags': ['happiness']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93If you judge people, you have no time to love them.\'94', 'author': 'Mother Teresa', 'tags': ['attributed-no-source']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93Anyone who thinks sitting in church can make you a Christian must also think that sitting in a garage can make you a car.\'94', 'author': 'Garrison Keillor', 'tags': ['humor', 'religion']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93Beauty is in the eye of the beholder and it may be necessary from time to time to give a stupid or misinformed beholder a black eye.\'94', 'author': 'Jim Henson', 'tags': ['humor']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93Today you are You, that is truer than true. There is no one alive who is Youer than You.\'94', 'author': 'Dr. Seuss', 'tags': ['comedy', 'life', 'yourself']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93If you want your children to be intelligent, read them fairy tales. If you want them to be more intelligent, read them more fairy tales.\'94', 'author': 'Albert Einstein', 'tags': ['children', 'fairy-tales']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93It is impossible to live without failing at something, unless you live so cautiously that you might as well not have lived at all - in which case, you fail by default.\'94', 'author': 'J.K. Rowling', 'tags': []\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93Logic will get you from A to Z; imagination will get you everywhere.\'94', 'author': 'Albert Einstein', 'tags': ['imagination']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93One good thing about music, when it hits you, you feel no pain.\'94', 'author': 'Bob Marley', 'tags': ['music']\}\
+2021-07-06 15:52:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/4/> (referer: http://quotes.toscrape.com/page/3/)\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': "\'93The more that you read, the more things you will know. The more that you learn, the more places you'll go.\'94", 'author': 'Dr. Seuss', 'tags': ['learning', 'reading', 'seuss']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?\'94', 'author': 'J.K. Rowling', 'tags': ['dumbledore']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for.\'94', 'author': 'Bob Marley', 'tags': ['friendship']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93Not all of us can do great things. But we can do small things with great love.\'94', 'author': 'Mother Teresa', 'tags': ['misattributed-to-mother-teresa', 'paraphrased']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93To the well-organized mind, death is but the next great adventure.\'94', 'author': 'J.K. Rowling', 'tags': ['death', 'inspirational']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': "\'93All you need is love. But a little chocolate now and then doesn't hurt.\'94", 'author': 'Charles M. Schulz', 'tags': ['chocolate', 'food', 'humor']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': "\'93We read to know we're not alone.\'94", 'author': 'William Nicholson', 'tags': ['misattributed-to-c-s-lewis', 'reading']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93Any fool can know. The point is to understand.\'94', 'author': 'Albert Einstein', 'tags': ['knowledge', 'learning', 'understanding', 'wisdom']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93I have always imagined that Paradise will be a kind of library.\'94', 'author': 'Jorge Luis Borges', 'tags': ['books', 'library']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93It is never too late to be what you might have been.\'94', 'author': 'George Eliot', 'tags': ['inspirational']\}\
+2021-07-06 15:52:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/5/> (referer: http://quotes.toscrape.com/page/4/)\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93A reader lives a thousand lives before he dies, said Jojen. The man who never reads lives only one.\'94', 'author': 'George R.R. Martin', 'tags': ['read', 'readers', 'reading', 'reading-books']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93You can never get a cup of tea large enough or a book long enough to suit me.\'94', 'author': 'C.S. Lewis', 'tags': ['books', 'inspirational', 'reading', 'tea']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93You believe lies so you eventually learn to trust no one but yourself.\'94', 'author': 'Marilyn Monroe', 'tags': []\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93If you can make a woman laugh, you can make her do anything.\'94', 'author': 'Marilyn Monroe', 'tags': ['girls', 'love']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93Life is like riding a bicycle. To keep your balance, you must keep moving.\'94', 'author': 'Albert Einstein', 'tags': ['life', 'simile']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93The real lover is the man who can thrill you by kissing your forehead or smiling into your eyes or just staring into space.\'94', 'author': 'Marilyn Monroe', 'tags': ['love']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': "\'93A wise girl kisses but doesn't love, listens but doesn't believe, and leaves before she is left.\'94", 'author': 'Marilyn Monroe', 'tags': ['attributed-no-source']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93Only in the darkness can you see the stars.\'94', 'author': 'Martin Luther King Jr.', 'tags': ['hope', 'inspirational']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93It matters not what someone is born, but what they grow to be.\'94', 'author': 'J.K. Rowling', 'tags': ['dumbledore']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93Love does not begin and end the way we seem to think it does. Love is a battle, love is a war; love is a growing up.\'94', 'author': 'James Baldwin', 'tags': ['love']\}\
+2021-07-06 15:52:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/6/> (referer: http://quotes.toscrape.com/page/5/)\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93There is nothing I would not do for those who are really my friends. I have no notion of loving people by halves, it is not my nature.\'94', 'author': 'Jane Austen', 'tags': ['friendship', 'love']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93Do one thing every day that scares you.\'94', 'author': 'Eleanor Roosevelt', 'tags': ['attributed', 'fear', 'inspiration']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93I am good, but not an angel. I do sin, but I am not the devil. I am just a small girl in a big world trying to find someone to love.\'94', 'author': 'Marilyn Monroe', 'tags': ['attributed-no-source']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93If I were not a physicist, I would probably be a musician. I often think in music. I live my daydreams in music. I see my life in terms of music.\'94', 'author': 'Albert Einstein', 'tags': ['music']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93If you only read the books that everyone else is reading, you can only think what everyone else is thinking.\'94', 'author': 'Haruki Murakami', 'tags': ['books', 'thought']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93The difference between genius and stupidity is: genius has its limits.\'94', 'author': 'Alexandre Dumas fils', 'tags': ['misattributed-to-einstein']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': "\'93He's like a drug for you, Bella.\'94", 'author': 'Stephenie Meyer', 'tags': ['drug', 'romance', 'simile']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93There is no friend as loyal as a book.\'94', 'author': 'Ernest Hemingway', 'tags': ['books', 'friends', 'novelist-quotes']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.\'94', 'author': 'Helen Keller', 'tags': ['inspirational']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': "\'93Life isn't about finding yourself. Life is about creating yourself.\'94", 'author': 'George Bernard Shaw', 'tags': ['inspirational', 'life', 'yourself']\}\
+2021-07-06 15:52:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/7/> (referer: http://quotes.toscrape.com/page/6/)\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': "\'93That's the problem with drinking, I thought, as I poured myself a drink. If something bad happens you drink in an attempt to forget; if something good happens you drink in order to celebrate; and if nothing happens you drink to make something happen.\'94", 'author': 'Charles Bukowski', 'tags': ['alcohol']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93You don\'92t forget the face of the person who was your last hope.\'94', 'author': 'Suzanne Collins', 'tags': ['the-hunger-games']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': "\'93Remember, we're madly in love, so it's all right to kiss me anytime you feel like it.\'94", 'author': 'Suzanne Collins', 'tags': ['humor']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93To love at all is to be vulnerable. Love anything and your heart will be wrung and possibly broken. If you want to make sure of keeping it intact you must give it to no one, not even an animal. Wrap it carefully round with hobbies and little luxuries; avoid all entanglements. Lock it up safe in the casket or coffin of your selfishness. But in that casket, safe, dark, motionless, airless, it will change. It will not be broken; it will become unbreakable, impenetrable, irredeemable. To love is to be vulnerable.\'94', 'author': 'C.S. Lewis', 'tags': ['love']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93Not all those who wander are lost.\'94', 'author': 'J.R.R. Tolkien', 'tags': ['bilbo', 'journey', 'lost', 'quest', 'travel', 'wander']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93Do not pity the dead, Harry. Pity the living, and, above all those who live without love.\'94', 'author': 'J.K. Rowling', 'tags': ['live-death-love']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93There is nothing to writing. All you do is sit down at a typewriter and bleed.\'94', 'author': 'Ernest Hemingway', 'tags': ['good', 'writing']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93Finish each day and be done with it. You have done what you could. Some blunders and absurdities no doubt crept in; forget them as soon as you can. Tomorrow is a new day. You shall begin it serenely and with too high a spirit to be encumbered with your old nonsense.\'94', 'author': 'Ralph Waldo Emerson', 'tags': ['life', 'regrets']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93I have never let my schooling interfere with my education.\'94', 'author': 'Mark Twain', 'tags': ['education']\}\
+2021-07-06 15:52:19 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': "\'93I have heard there are troubles of more than one kind. Some come from ahead and some come from behind. But I've bought a big bat. I'm all ready you see. Now my troubles are going to have troubles with me!\'94", 'author': 'Dr. Seuss', 'tags': ['troubles']\}\
+2021-07-06 15:52:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/8/> (referer: http://quotes.toscrape.com/page/7/)\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93If I had a flower for every time I thought of you...I could walk through my garden forever.\'94', 'author': 'Alfred Tennyson', 'tags': ['friendship', 'love']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93Some people never go crazy. What truly horrible lives they must lead.\'94', 'author': 'Charles Bukowski', 'tags': ['humor']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93The trouble with having an open mind, of course, is that people will insist on coming along and trying to put things in it.\'94', 'author': 'Terry Pratchett', 'tags': ['humor', 'open-mind', 'thinking']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93Think left and think right and think low and think high. Oh, the thinks you can think up if only you try!\'94', 'author': 'Dr. Seuss', 'tags': ['humor', 'philosophy']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': "\'93What really knocks me out is a book that, when you're all done reading it, you wish the author that wrote it was a terrific friend of yours and you could call him up on the phone whenever you felt like it. That doesn't happen much, though.\'94", 'author': 'J.D. Salinger', 'tags': ['authors', 'books', 'literature', 'reading', 'writing']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93The reason I talk to myself is because I\'92m the only one whose answers I accept.\'94', 'author': 'George Carlin', 'tags': ['humor', 'insanity', 'lies', 'lying', 'self-indulgence', 'truth']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': "\'93You may say I'm a dreamer, but I'm not the only one. I hope someday you'll join us. And the world will live as one.\'94", 'author': 'John Lennon', 'tags': ['beatles', 'connection', 'dreamers', 'dreaming', 'dreams', 'hope', 'inspirational', 'peace']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93I am free of all prejudice. I hate everyone equally. \'94', 'author': 'W.C. Fields', 'tags': ['humor', 'sinister']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': "\'93The question isn't who is going to let me; it's who is going to stop me.\'94", 'author': 'Ayn Rand', 'tags': []\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': "\'93\uc0\u8242 Classic\u8242  - a book which people praise and don't read.\'94", 'author': 'Mark Twain', 'tags': ['books', 'classic', 'reading']\}\
+2021-07-06 15:52:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/9/> (referer: http://quotes.toscrape.com/page/8/)\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93Anyone who has never made a mistake has never tried anything new.\'94', 'author': 'Albert Einstein', 'tags': ['mistakes']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': "\'93A lady's imagination is very rapid; it jumps from admiration to love, from love to matrimony in a moment.\'94", 'author': 'Jane Austen', 'tags': ['humor', 'love', 'romantic', 'women']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93Remember, if the time should come when you have to make a choice between what is right and what is easy, remember what happened to a boy who was good, and kind, and brave, because he strayed across the path of Lord Voldemort. Remember Cedric Diggory.\'94', 'author': 'J.K. Rowling', 'tags': ['integrity']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93I declare after all there is no enjoyment like reading! How much sooner one tires of any thing than of a book! -- When I have a house of my own, I shall be miserable if I have not an excellent library.\'94', 'author': 'Jane Austen', 'tags': ['books', 'library', 'reading']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93There are few people whom I really love, and still fewer of whom I think well. The more I see of the world, the more am I dissatisfied with it; and every day confirms my belief of the inconsistency of all human characters, and of the little dependence that can be placed on the appearance of merit or sense.\'94', 'author': 'Jane Austen', 'tags': ['elizabeth-bennet', 'jane-austen']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93Some day you will be old enough to start reading fairy tales again.\'94', 'author': 'C.S. Lewis', 'tags': ['age', 'fairytales', 'growing-up']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93We are not necessarily doubting that God will do the best for us; we are wondering how painful the best will turn out to be.\'94', 'author': 'C.S. Lewis', 'tags': ['god']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time.\'94', 'author': 'Mark Twain', 'tags': ['death', 'life']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93A lie can travel half way around the world while the truth is putting on its shoes.\'94', 'author': 'Mark Twain', 'tags': ['misattributed-mark-twain', 'truth']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93I believe in Christianity as I believe that the sun has risen: not only because I see it, but because by it I see everything else.\'94', 'author': 'C.S. Lewis', 'tags': ['christianity', 'faith', 'religion', 'sun']\}\
+2021-07-06 15:52:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/10/> (referer: http://quotes.toscrape.com/page/9/)\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93The truth." Dumbledore sighed. "It is a beautiful and terrible thing, and should therefore be treated with great caution.\'94', 'author': 'J.K. Rowling', 'tags': ['truth']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': "\'93I'm the one that's got to die when it's time for me to die, so let me live my life the way I want to.\'94", 'author': 'Jimi Hendrix', 'tags': ['death', 'life']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93To die will be an awfully big adventure.\'94', 'author': 'J.M. Barrie', 'tags': ['adventure', 'love']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93It takes courage to grow up and become who you really are.\'94', 'author': 'E.E. Cummings', 'tags': ['courage']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93But better to get hurt by the truth than comforted with a lie.\'94', 'author': 'Khaled Hosseini', 'tags': ['life']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93You never really understand a person until you consider things from his point of view... Until you climb inside of his skin and walk around in it.\'94', 'author': 'Harper Lee', 'tags': ['better-life-empathy']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93You have to write the book that wants to be written. And if the book will be too difficult for grown-ups, then you write it for children.\'94', 'author': "Madeleine L'Engle", 'tags': ['books', 'children', 'difficult', 'grown-ups', 'write', 'writers', 'writing']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93Never tell the truth to people who are not worthy of it.\'94', 'author': 'Mark Twain', 'tags': ['truth']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': "\'93A person's a person, no matter how small.\'94", 'author': 'Dr. Seuss', 'tags': ['inspirational']\}\
+2021-07-06 15:52:20 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93... a mind needs books as a sword needs a whetstone, if it is to keep its edge.\'94', 'author': 'George R.R. Martin', 'tags': ['books', 'mind']\}\
+2021-07-06 15:52:20 [scrapy.core.engine] INFO: Closing spider (finished)\
+2021-07-06 15:52:20 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: css-scraper-results.json\
+2021-07-06 15:52:20 [scrapy.statscollectors] INFO: Dumping Scrapy stats:\
+\{'downloader/request_bytes': 2925,\
+ 'downloader/request_count': 11,\
+ 'downloader/request_method_count/GET': 11,\
+ 'downloader/response_bytes': 23426,\
+ 'downloader/response_count': 11,\
+ 'downloader/response_status_count/200': 10,\
+ 'downloader/response_status_count/404': 1,\
+ 'elapsed_time_seconds': 2.094234,\
+ 'finish_reason': 'finished',\
+ 'finish_time': datetime.datetime(2021, 7, 6, 22, 52, 20, 427539),\
+ 'item_scraped_count': 100,\
+ 'log_count/DEBUG': 111,\
+ 'log_count/INFO': 11,\
+ 'memusage/max': 50544640,\
+ 'memusage/startup': 50544640,\
+ 'request_depth_max': 9,\
+ 'response_received_count': 11,\
+ 'robotstxt/request_count': 1,\
+ 'robotstxt/response_count': 1,\
+ 'robotstxt/response_status_count/404': 1,\
+ 'scheduler/dequeued': 10,\
+ 'scheduler/dequeued/memory': 10,\
+ 'scheduler/enqueued': 10,\
+ 'scheduler/enqueued/memory': 10,\
+ 'start_time': datetime.datetime(2021, 7, 6, 22, 52, 18, 333305)\}\
+2021-07-06 15:52:20 [scrapy.core.engine] INFO: Spider closed (finished)\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+css-scraper-results.json	quotes-2.html			quotes.json			scrapy_mini_project\
+quotes-1.html			quotes.jl			scrapy.cfg\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % less css-scraper-results.json \
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+css-scraper-results.json	quotes-2.html			quotes.json			scrapy_mini_project\
+quotes-1.html			quotes.jl			scrapy.cfg\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd scrapy_mini_project \
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+__init__.py	__pycache__	items.py	middlewares.py	pipelines.py	settings.py	spiders\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd spiders \
+(base) austinf1@USSFO-80UMD6R spiders % ls -l\
+total 24\
+-rw-r--r--  1 austinf1  staff   161 Apr  4 21:04 __init__.py\
+drwxr-xr-x  5 austinf1  staff   160 Jul  6 15:52 __pycache__\
+-rw-r--r--  1 austinf1  staff  1053 Jul  6 15:48 quotes_spider.py\
+-rw-r--r--  1 austinf1  staff   660 Jul  6 15:51 toscrape-css.py\
+(base) austinf1@USSFO-80UMD6R spiders % vi toscrape-xpath.py\
+(base) austinf1@USSFO-80UMD6R spiders % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project/scrapy_mini_project/spiders\
+(base) austinf1@USSFO-80UMD6R spiders % ls\
+__init__.py		__pycache__		quotes_spider.py	toscrape-css.py		toscrape-xpath.py\
+(base) austinf1@USSFO-80UMD6R spiders % cd ..\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % ls\
+__init__.py	__pycache__	items.py	middlewares.py	pipelines.py	settings.py	spiders\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % pwd\
+/Users/austinf1/Documents/workspace/springboard/scrapy_mini_project/scrapy_mini_project\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % cd ..\
+(base) austinf1@USSFO-80UMD6R scrapy_mini_project % scrapy crawl toscrape-xpath -o xpath-scraper-results.json\
+2021-07-06 15:53:48 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: scrapy_mini_project)\
+2021-07-06 15:53:48 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.2 (default, Mar 26 2020, 10:43:30) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.2.1, Platform macOS-10.15.7-x86_64-i386-64bit\
+2021-07-06 15:53:48 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor\
+2021-07-06 15:53:48 [scrapy.crawler] INFO: Overridden settings:\
+\{'BOT_NAME': 'scrapy_mini_project',\
+ 'NEWSPIDER_MODULE': 'scrapy_mini_project.spiders',\
+ 'ROBOTSTXT_OBEY': True,\
+ 'SPIDER_MODULES': ['scrapy_mini_project.spiders']\}\
+2021-07-06 15:53:48 [scrapy.extensions.telnet] INFO: Telnet Password: 7bfa9c41b1d3b2b8\
+2021-07-06 15:53:48 [scrapy.middleware] INFO: Enabled extensions:\
+['scrapy.extensions.corestats.CoreStats',\
+ 'scrapy.extensions.telnet.TelnetConsole',\
+ 'scrapy.extensions.memusage.MemoryUsage',\
+ 'scrapy.extensions.feedexport.FeedExporter',\
+ 'scrapy.extensions.logstats.LogStats']\
+2021-07-06 15:53:48 [scrapy.middleware] INFO: Enabled downloader middlewares:\
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',\
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',\
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',\
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',\
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',\
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',\
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',\
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',\
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',\
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',\
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']\
+2021-07-06 15:53:48 [scrapy.middleware] INFO: Enabled spider middlewares:\
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',\
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',\
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',\
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',\
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']\
+2021-07-06 15:53:48 [scrapy.middleware] INFO: Enabled item pipelines:\
+[]\
+2021-07-06 15:53:48 [scrapy.core.engine] INFO: Spider opened\
+2021-07-06 15:53:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)\
+2021-07-06 15:53:48 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025\
+2021-07-06 15:53:48 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)\
+2021-07-06 15:53:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/> (referer: None)\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.\'94', 'author': 'Albert Einstein', 'tags': ['change', 'deep-thoughts', 'thinking', 'world']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93It is our choices, Harry, that show what we truly are, far more than our abilities.\'94', 'author': 'J.K. Rowling', 'tags': ['abilities', 'choices']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.\'94', 'author': 'Albert Einstein', 'tags': ['inspirational', 'life', 'live', 'miracle', 'miracles']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.\'94', 'author': 'Jane Austen', 'tags': ['aliteracy', 'books', 'classic', 'humor']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': "\'93Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.\'94", 'author': 'Marilyn Monroe', 'tags': ['be-yourself', 'inspirational']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93Try not to become a man of success. Rather become a man of value.\'94', 'author': 'Albert Einstein', 'tags': ['adulthood', 'success', 'value']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93It is better to be hated for what you are than to be loved for what you are not.\'94', 'author': 'Andr\'e9 Gide', 'tags': ['life', 'love']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': "\'93I have not failed. I've just found 10,000 ways that won't work.\'94", 'author': 'Thomas A. Edison', 'tags': ['edison', 'failure', 'inspirational', 'paraphrased']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': "\'93A woman is like a tea bag; you never know how strong it is until it's in hot water.\'94", 'author': 'Eleanor Roosevelt', 'tags': ['misattributed-eleanor-roosevelt']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/>\
+\{'text': '\'93A day without sunshine is like, you know, night.\'94', 'author': 'Steve Martin', 'tags': ['humor', 'obvious', 'simile']\}\
+2021-07-06 15:53:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/2/> (referer: http://quotes.toscrape.com/)\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93This life is what you make it. No matter what, you're going to mess up sometimes, it's a universal truth. But the good part is you get to decide how you're going to mess it up. Girls will be your friends - they'll act like it anyway. But just remember, some come, some go. The ones that stay with you through everything - they're your true best friends. Don't let go of them. Also remember, sisters make the best friends in the world. As for lovers, well, they'll come and go too. And baby, I hate to say it, most of them - actually pretty much all of them are going to break your heart, but you can't give up because if you give up, you'll never find your soulmate. You'll never find that half who makes you whole and that goes for everything. Just because you fail once, doesn't mean you're gonna fail at everything. Keep trying, hold on, and always, always, always believe in yourself, because if you don't, then who will, sweetie? So keep your head high, keep your chin up, and most importantly, keep smiling, because life's a beautiful thing and there's so much to smile about.\'94", 'author': 'Marilyn Monroe', 'tags': ['friends', 'heartbreak', 'inspirational', 'life', 'love', 'sisters']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\'94', 'author': 'J.K. Rowling', 'tags': ['courage', 'friends']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93If you can't explain it to a six year old, you don't understand it yourself.\'94", 'author': 'Albert Einstein', 'tags': ['simplicity', 'understand']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93You may not be her first, her last, or her only. She loved before she may love again. But if she loves you now, what else matters? She's not perfect\'97you aren't either, and the two of you may never be perfect together but if she can make you laugh, cause you to think twice, and admit to being human and making mistakes, hold onto her and give her the most you can. She may not be thinking about you every second of the day, but she will give you a part of her that she knows you can break\'97her heart. So don't hurt her, don't change her, don't analyze and don't expect more than she can give. Smile when she makes you happy, let her know when she makes you mad, and miss her when she's not there.\'94", 'author': 'Bob Marley', 'tags': ['love']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I like nonsense, it wakes up the brain cells. Fantasy is a necessary ingredient in living.\'94', 'author': 'Dr. Seuss', 'tags': ['fantasy']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93I may not have gone where I intended to go, but I think I have ended up where I needed to be.\'94', 'author': 'Douglas Adams', 'tags': ['life', 'navigation']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': "\'93The opposite of love is not hate, it's indifference. The opposite of art is not ugliness, it's indifference. The opposite of faith is not heresy, it's indifference. And the opposite of life is not death, it's indifference.\'94", 'author': 'Elie Wiesel', 'tags': ['activism', 'apathy', 'hate', 'indifference', 'inspirational', 'love', 'opposite', 'philosophy']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93It is not a lack of love, but a lack of friendship that makes unhappy marriages.\'94', 'author': 'Friedrich Nietzsche', 'tags': ['friendship', 'lack-of-friendship', 'lack-of-love', 'love', 'marriage', 'unhappy-marriage']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Good friends, good books, and a sleepy conscience: this is the ideal life.\'94', 'author': 'Mark Twain', 'tags': ['books', 'contentment', 'friends', 'friendship', 'life']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/2/>\
+\{'text': '\'93Life is what happens to us while we are making other plans.\'94', 'author': 'Allen Saunders', 'tags': ['fate', 'life', 'misattributed-john-lennon', 'planning', 'plans']\}\
+2021-07-06 15:53:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/3/> (referer: http://quotes.toscrape.com/page/2/)\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93I love you without knowing how, or when, or from where. I love you simply, without problems or pride: I love you in this way because I do not know any other way of loving but this, in which there is no I or you, so intimate that your hand upon my chest is my hand, so intimate that when I fall asleep your eyes close.\'94', 'author': 'Pablo Neruda', 'tags': ['love', 'poetry']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93For every minute you are angry you lose sixty seconds of happiness.\'94', 'author': 'Ralph Waldo Emerson', 'tags': ['happiness']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93If you judge people, you have no time to love them.\'94', 'author': 'Mother Teresa', 'tags': ['attributed-no-source']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93Anyone who thinks sitting in church can make you a Christian must also think that sitting in a garage can make you a car.\'94', 'author': 'Garrison Keillor', 'tags': ['humor', 'religion']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93Beauty is in the eye of the beholder and it may be necessary from time to time to give a stupid or misinformed beholder a black eye.\'94', 'author': 'Jim Henson', 'tags': ['humor']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93Today you are You, that is truer than true. There is no one alive who is Youer than You.\'94', 'author': 'Dr. Seuss', 'tags': ['comedy', 'life', 'yourself']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93If you want your children to be intelligent, read them fairy tales. If you want them to be more intelligent, read them more fairy tales.\'94', 'author': 'Albert Einstein', 'tags': ['children', 'fairy-tales']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93It is impossible to live without failing at something, unless you live so cautiously that you might as well not have lived at all - in which case, you fail by default.\'94', 'author': 'J.K. Rowling', 'tags': []\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93Logic will get you from A to Z; imagination will get you everywhere.\'94', 'author': 'Albert Einstein', 'tags': ['imagination']\}\
+2021-07-06 15:53:48 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/3/>\
+\{'text': '\'93One good thing about music, when it hits you, you feel no pain.\'94', 'author': 'Bob Marley', 'tags': ['music']\}\
+2021-07-06 15:53:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/4/> (referer: http://quotes.toscrape.com/page/3/)\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': "\'93The more that you read, the more things you will know. The more that you learn, the more places you'll go.\'94", 'author': 'Dr. Seuss', 'tags': ['learning', 'reading', 'seuss']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?\'94', 'author': 'J.K. Rowling', 'tags': ['dumbledore']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for.\'94', 'author': 'Bob Marley', 'tags': ['friendship']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93Not all of us can do great things. But we can do small things with great love.\'94', 'author': 'Mother Teresa', 'tags': ['misattributed-to-mother-teresa', 'paraphrased']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93To the well-organized mind, death is but the next great adventure.\'94', 'author': 'J.K. Rowling', 'tags': ['death', 'inspirational']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': "\'93All you need is love. But a little chocolate now and then doesn't hurt.\'94", 'author': 'Charles M. Schulz', 'tags': ['chocolate', 'food', 'humor']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': "\'93We read to know we're not alone.\'94", 'author': 'William Nicholson', 'tags': ['misattributed-to-c-s-lewis', 'reading']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93Any fool can know. The point is to understand.\'94', 'author': 'Albert Einstein', 'tags': ['knowledge', 'learning', 'understanding', 'wisdom']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93I have always imagined that Paradise will be a kind of library.\'94', 'author': 'Jorge Luis Borges', 'tags': ['books', 'library']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/4/>\
+\{'text': '\'93It is never too late to be what you might have been.\'94', 'author': 'George Eliot', 'tags': ['inspirational']\}\
+2021-07-06 15:53:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/5/> (referer: http://quotes.toscrape.com/page/4/)\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93A reader lives a thousand lives before he dies, said Jojen. The man who never reads lives only one.\'94', 'author': 'George R.R. Martin', 'tags': ['read', 'readers', 'reading', 'reading-books']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93You can never get a cup of tea large enough or a book long enough to suit me.\'94', 'author': 'C.S. Lewis', 'tags': ['books', 'inspirational', 'reading', 'tea']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93You believe lies so you eventually learn to trust no one but yourself.\'94', 'author': 'Marilyn Monroe', 'tags': []\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93If you can make a woman laugh, you can make her do anything.\'94', 'author': 'Marilyn Monroe', 'tags': ['girls', 'love']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93Life is like riding a bicycle. To keep your balance, you must keep moving.\'94', 'author': 'Albert Einstein', 'tags': ['life', 'simile']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93The real lover is the man who can thrill you by kissing your forehead or smiling into your eyes or just staring into space.\'94', 'author': 'Marilyn Monroe', 'tags': ['love']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': "\'93A wise girl kisses but doesn't love, listens but doesn't believe, and leaves before she is left.\'94", 'author': 'Marilyn Monroe', 'tags': ['attributed-no-source']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93Only in the darkness can you see the stars.\'94', 'author': 'Martin Luther King Jr.', 'tags': ['hope', 'inspirational']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93It matters not what someone is born, but what they grow to be.\'94', 'author': 'J.K. Rowling', 'tags': ['dumbledore']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/5/>\
+\{'text': '\'93Love does not begin and end the way we seem to think it does. Love is a battle, love is a war; love is a growing up.\'94', 'author': 'James Baldwin', 'tags': ['love']\}\
+2021-07-06 15:53:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/6/> (referer: http://quotes.toscrape.com/page/5/)\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93There is nothing I would not do for those who are really my friends. I have no notion of loving people by halves, it is not my nature.\'94', 'author': 'Jane Austen', 'tags': ['friendship', 'love']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93Do one thing every day that scares you.\'94', 'author': 'Eleanor Roosevelt', 'tags': ['attributed', 'fear', 'inspiration']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93I am good, but not an angel. I do sin, but I am not the devil. I am just a small girl in a big world trying to find someone to love.\'94', 'author': 'Marilyn Monroe', 'tags': ['attributed-no-source']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93If I were not a physicist, I would probably be a musician. I often think in music. I live my daydreams in music. I see my life in terms of music.\'94', 'author': 'Albert Einstein', 'tags': ['music']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93If you only read the books that everyone else is reading, you can only think what everyone else is thinking.\'94', 'author': 'Haruki Murakami', 'tags': ['books', 'thought']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93The difference between genius and stupidity is: genius has its limits.\'94', 'author': 'Alexandre Dumas fils', 'tags': ['misattributed-to-einstein']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': "\'93He's like a drug for you, Bella.\'94", 'author': 'Stephenie Meyer', 'tags': ['drug', 'romance', 'simile']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93There is no friend as loyal as a book.\'94', 'author': 'Ernest Hemingway', 'tags': ['books', 'friends', 'novelist-quotes']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': '\'93When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.\'94', 'author': 'Helen Keller', 'tags': ['inspirational']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/6/>\
+\{'text': "\'93Life isn't about finding yourself. Life is about creating yourself.\'94", 'author': 'George Bernard Shaw', 'tags': ['inspirational', 'life', 'yourself']\}\
+2021-07-06 15:53:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/7/> (referer: http://quotes.toscrape.com/page/6/)\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': "\'93That's the problem with drinking, I thought, as I poured myself a drink. If something bad happens you drink in an attempt to forget; if something good happens you drink in order to celebrate; and if nothing happens you drink to make something happen.\'94", 'author': 'Charles Bukowski', 'tags': ['alcohol']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93You don\'92t forget the face of the person who was your last hope.\'94', 'author': 'Suzanne Collins', 'tags': ['the-hunger-games']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': "\'93Remember, we're madly in love, so it's all right to kiss me anytime you feel like it.\'94", 'author': 'Suzanne Collins', 'tags': ['humor']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93To love at all is to be vulnerable. Love anything and your heart will be wrung and possibly broken. If you want to make sure of keeping it intact you must give it to no one, not even an animal. Wrap it carefully round with hobbies and little luxuries; avoid all entanglements. Lock it up safe in the casket or coffin of your selfishness. But in that casket, safe, dark, motionless, airless, it will change. It will not be broken; it will become unbreakable, impenetrable, irredeemable. To love is to be vulnerable.\'94', 'author': 'C.S. Lewis', 'tags': ['love']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93Not all those who wander are lost.\'94', 'author': 'J.R.R. Tolkien', 'tags': ['bilbo', 'journey', 'lost', 'quest', 'travel', 'wander']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93Do not pity the dead, Harry. Pity the living, and, above all those who live without love.\'94', 'author': 'J.K. Rowling', 'tags': ['live-death-love']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93There is nothing to writing. All you do is sit down at a typewriter and bleed.\'94', 'author': 'Ernest Hemingway', 'tags': ['good', 'writing']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93Finish each day and be done with it. You have done what you could. Some blunders and absurdities no doubt crept in; forget them as soon as you can. Tomorrow is a new day. You shall begin it serenely and with too high a spirit to be encumbered with your old nonsense.\'94', 'author': 'Ralph Waldo Emerson', 'tags': ['life', 'regrets']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': '\'93I have never let my schooling interfere with my education.\'94', 'author': 'Mark Twain', 'tags': ['education']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/7/>\
+\{'text': "\'93I have heard there are troubles of more than one kind. Some come from ahead and some come from behind. But I've bought a big bat. I'm all ready you see. Now my troubles are going to have troubles with me!\'94", 'author': 'Dr. Seuss', 'tags': ['troubles']\}\
+2021-07-06 15:53:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/8/> (referer: http://quotes.toscrape.com/page/7/)\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93If I had a flower for every time I thought of you...I could walk through my garden forever.\'94', 'author': 'Alfred Tennyson', 'tags': ['friendship', 'love']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93Some people never go crazy. What truly horrible lives they must lead.\'94', 'author': 'Charles Bukowski', 'tags': ['humor']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93The trouble with having an open mind, of course, is that people will insist on coming along and trying to put things in it.\'94', 'author': 'Terry Pratchett', 'tags': ['humor', 'open-mind', 'thinking']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93Think left and think right and think low and think high. Oh, the thinks you can think up if only you try!\'94', 'author': 'Dr. Seuss', 'tags': ['humor', 'philosophy']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': "\'93What really knocks me out is a book that, when you're all done reading it, you wish the author that wrote it was a terrific friend of yours and you could call him up on the phone whenever you felt like it. That doesn't happen much, though.\'94", 'author': 'J.D. Salinger', 'tags': ['authors', 'books', 'literature', 'reading', 'writing']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93The reason I talk to myself is because I\'92m the only one whose answers I accept.\'94', 'author': 'George Carlin', 'tags': ['humor', 'insanity', 'lies', 'lying', 'self-indulgence', 'truth']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': "\'93You may say I'm a dreamer, but I'm not the only one. I hope someday you'll join us. And the world will live as one.\'94", 'author': 'John Lennon', 'tags': ['beatles', 'connection', 'dreamers', 'dreaming', 'dreams', 'hope', 'inspirational', 'peace']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': '\'93I am free of all prejudice. I hate everyone equally. \'94', 'author': 'W.C. Fields', 'tags': ['humor', 'sinister']\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': "\'93The question isn't who is going to let me; it's who is going to stop me.\'94", 'author': 'Ayn Rand', 'tags': []\}\
+2021-07-06 15:53:49 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/8/>\
+\{'text': "\'93\uc0\u8242 Classic\u8242  - a book which people praise and don't read.\'94", 'author': 'Mark Twain', 'tags': ['books', 'classic', 'reading']\}\
+2021-07-06 15:53:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/9/> (referer: http://quotes.toscrape.com/page/8/)\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93Anyone who has never made a mistake has never tried anything new.\'94', 'author': 'Albert Einstein', 'tags': ['mistakes']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': "\'93A lady's imagination is very rapid; it jumps from admiration to love, from love to matrimony in a moment.\'94", 'author': 'Jane Austen', 'tags': ['humor', 'love', 'romantic', 'women']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93Remember, if the time should come when you have to make a choice between what is right and what is easy, remember what happened to a boy who was good, and kind, and brave, because he strayed across the path of Lord Voldemort. Remember Cedric Diggory.\'94', 'author': 'J.K. Rowling', 'tags': ['integrity']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93I declare after all there is no enjoyment like reading! How much sooner one tires of any thing than of a book! -- When I have a house of my own, I shall be miserable if I have not an excellent library.\'94', 'author': 'Jane Austen', 'tags': ['books', 'library', 'reading']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93There are few people whom I really love, and still fewer of whom I think well. The more I see of the world, the more am I dissatisfied with it; and every day confirms my belief of the inconsistency of all human characters, and of the little dependence that can be placed on the appearance of merit or sense.\'94', 'author': 'Jane Austen', 'tags': ['elizabeth-bennet', 'jane-austen']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93Some day you will be old enough to start reading fairy tales again.\'94', 'author': 'C.S. Lewis', 'tags': ['age', 'fairytales', 'growing-up']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93We are not necessarily doubting that God will do the best for us; we are wondering how painful the best will turn out to be.\'94', 'author': 'C.S. Lewis', 'tags': ['god']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time.\'94', 'author': 'Mark Twain', 'tags': ['death', 'life']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93A lie can travel half way around the world while the truth is putting on its shoes.\'94', 'author': 'Mark Twain', 'tags': ['misattributed-mark-twain', 'truth']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/9/>\
+\{'text': '\'93I believe in Christianity as I believe that the sun has risen: not only because I see it, but because by it I see everything else.\'94', 'author': 'C.S. Lewis', 'tags': ['christianity', 'faith', 'religion', 'sun']\}\
+2021-07-06 15:53:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/page/10/> (referer: http://quotes.toscrape.com/page/9/)\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93The truth." Dumbledore sighed. "It is a beautiful and terrible thing, and should therefore be treated with great caution.\'94', 'author': 'J.K. Rowling', 'tags': ['truth']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': "\'93I'm the one that's got to die when it's time for me to die, so let me live my life the way I want to.\'94", 'author': 'Jimi Hendrix', 'tags': ['death', 'life']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93To die will be an awfully big adventure.\'94', 'author': 'J.M. Barrie', 'tags': ['adventure', 'love']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93It takes courage to grow up and become who you really are.\'94', 'author': 'E.E. Cummings', 'tags': ['courage']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93But better to get hurt by the truth than comforted with a lie.\'94', 'author': 'Khaled Hosseini', 'tags': ['life']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93You never really understand a person until you consider things from his point of view... Until you climb inside of his skin and walk around in it.\'94', 'author': 'Harper Lee', 'tags': ['better-life-empathy']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93You have to write the book that wants to be written. And if the book will be too difficult for grown-ups, then you write it for children.\'94', 'author': "Madeleine L'Engle", 'tags': ['books', 'children', 'difficult', 'grown-ups', 'write', 'writers', 'writing']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93Never tell the truth to people who are not worthy of it.\'94', 'author': 'Mark Twain', 'tags': ['truth']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': "\'93A person's a person, no matter how small.\'94", 'author': 'Dr. Seuss', 'tags': ['inspirational']\}\
+2021-07-06 15:53:50 [scrapy.core.scraper] DEBUG: Scraped from <200 http://quotes.toscrape.com/page/10/>\
+\{'text': '\'93... a mind needs books as a sword needs a whetstone, if it is to keep its edge.\'94', 'author': 'George R.R. Martin', 'tags': ['books', 'mind']\}\
+2021-07-06 15:53:50 [scrapy.core.engine] INFO: Closing spider (finished)\
+2021-07-06 15:53:50 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: xpath-scraper-results.json\
+2021-07-06 15:53:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:\
+\{'downloader/request_bytes': 2925,\
+ 'downloader/request_count': 11,\
+ 'downloader/request_method_count/GET': 11,\
+ 'downloader/response_bytes': 23431,\
+ 'downloader/response_count': 11,\
+ 'downloader/response_status_count/200': 10,\
+ 'downloader/response_status_count/404': 1,\
+ 'elapsed_time_seconds': 2.018485,\
+ 'finish_reason': 'finished',\
+ 'finish_time': datetime.datetime(2021, 7, 6, 22, 53, 50, 205869),\
+ 'item_scraped_count': 100,\
+ 'log_count/DEBUG': 111,\
+ 'log_count/INFO': 11,\
+ 'memusage/max': 50298880,\
+ 'memusage/startup': 50298880,\
+ 'request_depth_max': 9,\
+ 'response_received_count': 11,\
+ 'robotstxt/request_count': 1,\
+ 'robotstxt/response_count': 1,\
+ 'robotstxt/response_status_count/404': 1,\
+ 'scheduler/dequeued': 10,\
+ 'scheduler/dequeued/memory': 10,\
+ 'scheduler/enqueued': 10,\
+ 'scheduler/enqueued/memory': 10,\
+ 'start_time': datetime.datetime(2021, 7, 6, 22, 53, 48, 187384)\}\
+2021-07-06 15:53:50 [scrapy.core.engine] INFO: Spider closed (finished)}
