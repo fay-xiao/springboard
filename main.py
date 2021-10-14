@@ -57,7 +57,7 @@ with dataset:
    kmeans.fit(tripadvisor_data1)
    prediction = kmeans.predict(tripadvisor_data1)
    tripadvisor_data['Cluster'] = prediction
-   st.write(tripadvisor_data.head(20))
+   st.write(tripadvisor_data.head(30))
 
    st.header('Europe user recommendation dataset')
    google_file = "google_review_ratings.csv"
@@ -131,3 +131,48 @@ with dataset:
                 label=target_name)
    plt.title('Google dataset clusters using PCA')
    st.pyplot(plt)
+
+   kmeans = KMeans(n_clusters=3, init='k-means++', random_state=42)
+   kmeans.fit(google_data1)
+   prediction = kmeans.predict(google_data1)
+   google_data['Cluster'] = prediction
+   st.write(google_data.head(30))
+
+   with features:
+      st.header('You can give recommendation for a given user based data collection from other user. For example, can we provide recommend based user 28 for user 8 for Asia')
+      def user_recommendationtripadvisor(firstid, secondid):
+         # first user ID
+         row_firstuser = tripadvisor_data.loc[tripadvisor_data['User ID']==firstid]
+         cluster_firstuser = row_firstuser['Cluster'].item()
+         # second user ID
+         row_seconduser = tripadvisor_data.loc[tripadvisor_data['User ID']==secondid]
+         cluster_seconduser = row_seconduser['Cluster'].item()
+         if cluster_firstuser == cluster_seconduser:
+            return 'Yes'
+         else:
+            return 'No'
+      def user_recommendationgoogle(firstid, secondid):
+         # first user ID
+         row_firstuser = google_data.loc[google_data['User ID']==firstid]
+         cluster_firstuser = row_firstuser['Cluster'].item()
+         # second user ID
+         row_seconduser = google_data.loc[google_data['User ID']==secondid]
+         cluster_seconduser = row_seconduser['Cluster'].item()   
+         if cluster_firstuser == cluster_seconduser:
+            return 'Yes'
+         else:
+            return 'No'
+      
+      continent=st.selectbox('which continent you are traveling to?', options=['Asia','Europe'], index = 0)
+      firstuser=st.text_input('User to be recommendated')
+      seconduser=st.text_input('User to be used for recommendation')
+      while (not firstuser) and (not seconduser):
+         continent=st.selectbox('which continent you are traveling to?', options=['Asia','Europe'])
+         firstuser=st.text_input('User to be recommendated')
+         seconduser=st.text_input('User to be used for recommendation')
+      if continent == 'Asia':
+         st.write('Asia')
+         st.write(user_recommendationtripadvisor(firstuser, seconduser))
+      else:
+         st.write('Europe')
+         st.write(user_recommendationgoogle(firstuser, seconduser))
