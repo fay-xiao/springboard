@@ -9,6 +9,7 @@ from sklearn.cluster import KMeans
 from sklearn import metrics
 from sklearn.decomposition import PCA
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn.neighbors import NearestNeighbors
 
 header =  st.beta_container()
 dataset = st.beta_container()
@@ -53,11 +54,24 @@ with dataset:
    plt.ylabel('Silhouette Score')
    st.pyplot(plt)
    st.write('Set k = 3')
-   kmeans = KMeans(n_clusters=3, init='k-means++', random_state=42)
+   kmeans = KMeans(n_clusters=3, init='k-means++', random_state=101)
    kmeans.fit(tripadvisor_data1)
    prediction = kmeans.predict(tripadvisor_data1)
-   tripadvisor_data['Cluster'] = prediction
-   st.write(tripadvisor_data.head(30))
+   X = tripadvisor_data1
+   y = prediction
+   X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_size=0.65,test_size=0.35, random_state=101)
+   pca = PCA(n_components=2) # reduce dimesions of the data using PCA and LDA
+   X_r = pca.fit(X).transform(X)
+   lda = LinearDiscriminantAnalysis(n_components=2)
+   X_r2 = lda.fit(X, y).transform(X)
+   n_clusters=3
+   plt.figure(figsize=(16,8))
+   for  i in range(n_clusters): # plot clusters
+      plt.scatter(X_r[y == i, 0], X_r[y == i, 1], alpha=.5)
+
+   plt.title('Trip Advisor dataset clusters using PCA')
+   st.pyplot(plt)
+   
 
    st.header('Europe user recommendation dataset')
    google_file = "google_review_ratings.csv"
@@ -118,61 +132,44 @@ with dataset:
    clusterNames = kmeans.labels_
    X = google_data1
    y = clusterNames
-   target_names = [0,1,2]
+   X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_size=0.65,test_size=0.35, random_state=42)
    pca = PCA(n_components=2) # reduce dimesions of the data using PCA and LDA
    X_r = pca.fit(X).transform(X)
    lda = LinearDiscriminantAnalysis(n_components=2)
    X_r2 = lda.fit(X, y).transform(X)
-
+   n_clusters=3
    plt.figure(figsize=(16,8))
-   colors = ['#ffa60a', '#880000', '#0a0054',]
-   for color, i, target_name in zip(colors, range(0,4), target_names): # plot clusters
-      plt.scatter(X_r[y == i, 0], X_r[y == i, 1], color=color, alpha=.5,
-                label=target_name)
+   for  i in range(n_clusters): # plot clusters
+      plt.scatter(X_r[y == i, 0], X_r[y == i, 1], alpha=.5)
    plt.title('Google dataset clusters using PCA')
    st.pyplot(plt)
 
-   kmeans = KMeans(n_clusters=3, init='k-means++', random_state=42)
-   kmeans.fit(google_data1)
-   prediction = kmeans.predict(google_data1)
-   google_data['Cluster'] = prediction
-   st.write(google_data.head(30))
-
    with features:
-      st.header('You can give recommendation for a given user based data collection from other user. For example, can we provide recommend based user 28 for user 8 for Asia')
-      def user_recommendationtripadvisor(firstid, secondid):
-         # first user ID
-         row_firstuser = tripadvisor_data.loc[tripadvisor_data['User ID']==firstid]
-         cluster_firstuser = row_firstuser['Cluster'].item()
-         # second user ID
-         row_seconduser = tripadvisor_data.loc[tripadvisor_data['User ID']==secondid]
-         cluster_seconduser = row_seconduser['Cluster'].item()
-         if cluster_firstuser == cluster_seconduser:
-            return 'Yes'
-         else:
-            return 'No'
-      def user_recommendationgoogle(firstid, secondid):
-         # first user ID
-         row_firstuser = google_data.loc[google_data['User ID']==firstid]
-         cluster_firstuser = row_firstuser['Cluster'].item()
-         # second user ID
-         row_seconduser = google_data.loc[google_data['User ID']==secondid]
-         cluster_seconduser = row_seconduser['Cluster'].item()   
-         if cluster_firstuser == cluster_seconduser:
-            return 'Yes'
-         else:
-            return 'No'
+      st.header('Recommendation for a given user')
+      input_data_matrix = google_data[googleColumnLst[1:]].values
+      knn_model = NearestNeighbors(n_neighbors=3).fit(input_data_matrix)
+      def compare_dfgoogle(index, ind):   
+          zero_cols_in = google_data.loc[index].astype(bool)
+          zero_df_in = pd.DataFrame(zero_cols_in[zero_cols_in == True]).reset_index(level = 0)
+          in_wo_rating = zero_df_in['index']
+          sug_user = google_data.loc[ind]
+          zero_cols_sug = sug_user.astype(bool)
+          zero_df_sug = pd.DataFrame(zero_cols_sug[zero_cols_sug == True]).reset_index(level = 0)
+          sug_wo_rating = zero_df_sug['index']
+          sugg_list = list(set(sug_wo_rating) - set(in_wo_rating))
+          return sugg_list
+      def recommend_knngoogle(index):
+          distances, indices = knn_model.kneighbors(google_data[googleColumnLst[1:]].iloc[index, :].values.reshape(1,-1), n_neighbors = 10)
+          distances = np.sort(distances)
+          for i in range(0,len(indices[0])):
+             ind = np.where(distances.flatten() == distances[0][i])[0][0]
+             sug_list = compare_dfgoogle(index, indices[0][i]) 
+             if len(sug_list) > 0:
+                 break
+          return sug_list
       
       continent=st.selectbox('which continent you are traveling to?', options=['Asia','Europe'], index = 0)
-      firstuser=st.text_input('User to be recommendated')
-      seconduser=st.text_input('User to be used for recommendation')
-      while (not firstuser) and (not seconduser):
-         continent=st.selectbox('which continent you are traveling to?', options=['Asia','Europe'])
-         firstuser=st.text_input('User to be recommendated')
-         seconduser=st.text_input('User to be used for recommendation')
-      if continent == 'Asia':
-         st.write('Asia')
-         st.write(user_recommendationtripadvisor(firstuser, seconduser))
-      else:
-         st.write('Europe')
-         st.write(user_recommendationgoogle(firstuser, seconduser))
+      selectedUser=st.text_input('Enter the user')
+      st.write(recommend_knngoogle(int(selectedUser)))
+      
+     
