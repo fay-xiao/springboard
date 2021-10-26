@@ -4,6 +4,10 @@ Datasets used:
 tripadvisor_review.csv is from https://www.kaggle.com/prashanthv945/travel-reviews is a collection of ratings on different categories from Asia travelers. Rated categories are: art galleries, dance clubs, juice bars, restaurants,museums,resorts,parks,
 beaches,theatres and religious institutions. Rating is in a range from 0 - 4 and we use 2 as the average rating.
 google_review_ratings.csv is from https://www.kaggle.com/wirachleelakiatiwong/travel-review-rating-dataset is a collection of ratings on different categories from Europe travelers. Rated categories are: churches,resorts,beaches,parks,theatres,museums,malls,zoo,restaurants,pubs/bars,local services,burger/pizza shops,hotels/other lodgings,juice bars,art galleries,dance clubs,swimming pools,gyms,bakeries,beauty & spas,cafes,view points,monuments and gardens. Rating is in a range from 0 - 5 and we use 3 as the average rating.
+Important files:
+jupyter notebook: recommendationwithbothgoogleNtripadvisorusingkmeancluster.ipynb
+streamlit: main.py
+requirements.txt used to specify needed python libraries for streamlit to pick up
 Process:
 1. we clean up the datesets and take a look the basic statistics of each set
 2. We find inertias with different cluster range 2 - 20 to find the optimal k. Displayed in a line graph.
